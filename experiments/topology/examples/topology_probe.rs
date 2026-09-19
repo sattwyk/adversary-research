@@ -1,12 +1,15 @@
 //! Local reliability experiment. No production algorithms are replaced.
 //! Measures whether fixed input reproduces native worker batch boundaries.
+use databend_meta_raft_log::{RaftLog, RaftLogConfig, RaftLogStore};
+use databend_meta_types::raft_types::{Entry, EntryPayload, IOFlushed, TypeConfig, new_log_id};
+use databend_meta_types::{Cmd, LogEntry, UpsertKV};
+use openraft::type_config::TypeConfigExt;
+use openraft::{RaftLogReader, storage::RaftLogStorage};
 use std::sync::{Arc, Mutex};
 use std::time::Duration;
-use databend_meta_raft_log::{RaftLog, RaftLogConfig, RaftLogStore};
-use databend_meta_types::{Cmd, LogEntry, UpsertKV};
-use databend_meta_types::raft_types::{Entry, EntryPayload, IOFlushed, TypeConfig, new_log_id};
-use openraft::{RaftLogReader, TypeConfigExt, storage::RaftLogStorage};
 
+// The batch sizes are observed from upstream diagnostic messages. This logger
+// is not a stable tracing ABI and does not prove worker scheduling control.
 struct BatchLog(Mutex<Vec<usize>>);
 static LOG: BatchLog = BatchLog(Mutex::new(Vec::new()));
 impl log::Log for BatchLog {
@@ -28,7 +31,9 @@ async fn main() -> anyhow::Result<()> {
     log::set_logger(&LOG).unwrap();
     log::set_max_level(log::LevelFilter::Debug);
     let root = std::env::var("ADVERSARY_TEST_DIR")?;
-    let trials: usize = std::env::var("ADVERSARY_TRIALS").unwrap_or("20".into()).parse()?;
+    let trials: usize = std::env::var("ADVERSARY_TRIALS")
+        .unwrap_or("20".into())
+        .parse()?;
     let count = 256u64;
     for trial in 0..trials {
         let dir = tempfile::tempdir_in(&root)?;
@@ -43,6 +48,7 @@ async fn main() -> anyhow::Result<()> {
         LOG.0.lock().unwrap().clear();
         let mut expected = Vec::new();
         let mut waiters = Vec::new();
+        let mut abandoned_waiters = 0;
         for i in 0..count {
             // Fixed bytes, indices and order; no entropy or host sleeps in workload.
             let value = vec![(i % 251) as u8; 4096];
@@ -57,16 +63,25 @@ async fn main() -> anyhow::Result<()> {
             let (tx, rx) = TypeConfig::oneshot();
             store.append([entry], IOFlushed::signal(tx)).await?;
             // Some callers stop waiting; this must not withdraw the queued write.
-            if i % 11 == 0 { drop(rx); } else { waiters.push(rx); }
+            if i % 11 == 0 {
+                abandoned_waiters += 1;
+                drop(rx);
+            } else {
+                waiters.push(rx);
+            }
         }
-        for rx in waiters { rx.await??; }
+        for rx in waiters {
+            rx.await??;
+        }
         store.read().await.wait_worker_idle()?;
         let batches = LOG.0.lock().unwrap().clone();
         drop(store); // Graceful close; explicitly NOT a process or power crash.
         let mut recovered = RaftLogStore::new(1, RaftLog::open(config)?);
         let actual = recovered.try_get_log_entries(0..count).await?;
         assert_eq!(actual, expected, "real codec/recovery changed the entries");
-        println!("{{\"trial\":{trial},\"entries\":{count},\"abandoned_waiters\":24,\"recovered_equal\":true,\"batches\":{batches:?}}}");
+        println!(
+            "{{\"trial\":{trial},\"entries\":{count},\"abandoned_waiters\":{abandoned_waiters},\"recovered_equal\":true,\"batches\":{batches:?}}}"
+        );
         drop(recovered);
     }
     Ok(())

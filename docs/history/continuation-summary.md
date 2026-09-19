@@ -20,7 +20,7 @@ The redb integration required a **54-line guest wrapper and zero changes to redb
 
 These are feasibility results, **not throughput measurements, filesystem validation, or newly discovered bugs**.
 
-The [full research report](</C:/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/outputs/adversary-continuation-review.md>) contains the source-level comparisons, cancellation analysis, scheduling taxonomy and quantitative experiment protocols. The [reproducible probes](</C:/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/outputs/continuation-probes.zip>) include source, lockfiles, results and limitations. Research cutoff: **18 September 2026**; recorded investigation time: approximately 41 minutes.
+The [full research report](../research/continuation-review.md) contains the source-level comparisons, cancellation analysis, scheduling taxonomy and quantitative experiment protocols. The [reproducible probes](../../archive/continuation-probes-original.zip) include source, lockfiles, results and limitations. Research cutoff: **18 September 2026**; recorded investigation time: approximately 41 minutes.
 
 ## 2. **Is the effect boundary real?**
 

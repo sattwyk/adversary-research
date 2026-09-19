@@ -1,0 +1,24 @@
+name: Continuation probes
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  probes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Rust toolchain
+        run: |
+          rustup toolchain install 1.97.1 --profile minimal --component rustfmt --component clippy --target wasm32-unknown-unknown
+          rustup default 1.97.1
+      - name: Format, lint, build and execute probes
+        run: bash scripts/run-probes.sh
+      - name: Validate archived evidence and documentation links
+        run: python3 scripts/check-evidence.py
+      - name: Upload current results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: continuation-results
+          path: results/current/

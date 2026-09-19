@@ -1,0 +1,2 @@
+PASS: 100 native fiber schedules preserve nested synchronous write_all and stack locals.
+PASS: dropping a suspended native fiber executes the application Drop marker. It is not an abrupt process kill.

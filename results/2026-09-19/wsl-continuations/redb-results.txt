@@ -1,0 +1,13 @@
+Unmodified redb 4.1.0: commit+read=42, power-loss reopen=42; 4 backend writes during commit.
+Baseline import count: 63
+PASS commit write 1: half effect, persist=false, kill suspended guest; recovered=0; 10 identical traces
+PASS commit write 1: half effect, persist=true, kill suspended guest; recovered=0; 10 identical traces
+PASS commit write 2: half effect, persist=false, kill suspended guest; recovered=0; 10 identical traces
+PASS commit write 2: half effect, persist=true, kill suspended guest; recovered=0; 10 identical traces
+PASS commit write 3: half effect, persist=false, kill suspended guest; recovered=0; 10 identical traces
+PASS commit write 3: half effect, persist=true, kill suspended guest; recovered=0; 10 identical traces
+PASS commit write 4: half effect, persist=false, kill suspended guest; recovered=0; 10 identical traces
+PASS commit write 4: half effect, persist=true, kill suspended guest; recovered=0; 10 identical traces
+PASS: sync effect persisted, killed before completion returned, recovered=42; 10 identical traces.
+PASS: guest Drop marker ran on normal completion and never on suspended-call kill.
+Scope: real synchronous redb engine, single caller, simple abstract disk. No native concurrency/OS conformance or bug-discovery claim.

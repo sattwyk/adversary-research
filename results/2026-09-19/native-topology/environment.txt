@@ -1,0 +1,8 @@
+rustc 1.94.0-nightly (f52090008 2025-12-10)
+binary: rustc
+commit-hash: f5209000832c9d3bc29c91f4daef4ca9f28dc797
+commit-date: 2025-12-10
+host: x86_64-unknown-linux-gnu
+release: 1.94.0-nightly
+LLVM version: 21.1.5
+Linux x86_64

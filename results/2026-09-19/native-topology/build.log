@@ -1,0 +1,5 @@
+   Compiling databend-meta-proto v260629.7.0 (/tmp/adversary-research-topology/databend-meta/crates/common/proto)
+   Compiling databend-meta-types v260629.7.0 (/tmp/adversary-research-topology/databend-meta/crates/server/types)
+   Compiling databend-meta-raft-log v260629.7.0 (/tmp/adversary-research-topology/databend-meta/crates/server/raft-log)
+    Finished `dev` profile [unoptimized] target(s) in 36.50s
+     Running `/tmp/adversary-topology-20260918/work/target/debug/examples/topology_probe`
