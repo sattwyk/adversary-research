@@ -8,12 +8,15 @@ from pathlib import Path
 import hashlib
 import json
 import re
+import subprocess
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    for script in sorted((ROOT / "scripts").glob("*.sh")):
+        subprocess.run(["bash", "-n", str(script)], check=True)
     for line in (ROOT / "archive/SHA256SUMS").read_text().splitlines():
         expected, name = line.split("  ", 1)
         actual = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
@@ -43,7 +46,7 @@ def main():
         assert trial["abandoned_waiters"] == 24
         assert trial["batches"], "An empty logger result is not batching evidence"
     distinct = len({tuple(trial["batches"]) for trial in trials})
-    print(f"PASS: archive hashes, local documentation links, 20 recorded native trials ({distinct} distinct batch sequences).")
+    print(f"PASS: shell syntax, archive hashes, local documentation links, 20 recorded native trials ({distinct} distinct batch sequences).")
 
 
 if __name__ == "__main__":
