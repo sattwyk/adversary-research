@@ -1,0 +1,6 @@
+{"scenario":"commit-beyond-last","rejected":false,"last":None,"committed":Some((1, 100)),"purged":None,"error":None}
+{"scenario":"commit-beyond-last","rejected":true,"last":None,"committed":None,"purged":None,"error":Some("Log id is beyond the last log id when commit: last None, attempted (1, 100)")}
+{"scenario":"truncate-committed","rejected":false,"last":Some((1, 0)),"committed":Some((1, 1)),"purged":None,"error":None}
+{"scenario":"truncate-committed","rejected":true,"last":Some((1, 2)),"committed":Some((1, 1)),"purged":None,"error":Some("Truncation would remove committed logs: committed (1, 1), attempted to keep upto Some((1, 0))")}
+{"scenario":"purge-conflicting-id","rejected":false,"last":Some((3, 1)),"committed":None,"purged":Some((3, 1)),"error":None}
+{"scenario":"purge-conflicting-id","rejected":true,"last":Some((2, 3)),"committed":None,"purged":None,"error":Some("Log id conflicts with the stored log id when purge: stored (1, 1), attempted (3, 1); log id order and log index order must agree")}

@@ -1,0 +1,13 @@
+diff --git a/crates/server/raft-log/Cargo.toml b/crates/server/raft-log/Cargo.toml
+index 2dc5515..432e040 100644
+--- a/crates/server/raft-log/Cargo.toml
++++ b/crates/server/raft-log/Cargo.toml
+@@ -24,6 +24,7 @@ tokio = { workspace = true }
+ 
+ [dev-dependencies]
+ anyhow = { workspace = true }
++chunked-wal = { version = "=0.2.3", features = ["adversary"] }
+ pretty_assertions = { workspace = true }
+ tempfile = { workspace = true }
+ 
+

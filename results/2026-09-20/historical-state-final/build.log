@@ -1,0 +1,36 @@
+    Updating crates.io index
+     Locking 106 packages to latest Rust 1.94.0-nightly compatible versions
+      Adding thiserror v1.0.69 (available: v2.0.20)
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.WRhs6c)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 7.24s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+    Blocking waiting for file lock on package cache
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.WRhs6c)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 8.87s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.WRhs6c)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.99s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.WRhs6c)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.02s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+    Updating crates.io index
+     Locking 10 packages to latest Rust 1.94.0-nightly compatible versions
+      Adding getrandom v0.3.4
+      Adding ppv-lite86 v0.2.21
+      Adding r-efi v5.3.0
+      Adding rand v0.9.5 (available: v0.10.2)
+      Adding rand_chacha v0.9.0
+      Adding rand_core v0.9.5
+      Adding wasip2 v1.0.4+wasi-0.2.12
+      Adding wit-bindgen v0.57.1
+      Adding zerocopy v0.8.57
+      Adding zerocopy-derive v0.8.57
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.WRhs6c)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.30s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.WRhs6c)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.85s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`

@@ -2,6 +2,8 @@
 
 **This is an unfinished larger experiment.** The current example is a native WAL observation workload, not a deterministic cluster or power-loss harness.
 
+The newer [controlled worker result](../../docs/research/topology-experiment-results.md) adds reproducible native checkpoints and historical regression probes. Use `scripts/prepare-controlled-topology.sh` followed by `scripts/run-controlled-topology.sh`; both default to `.work/controlled-topology`. Set `ADVERSARY_EXAMPLE=controlled_failure_probe` and a separate results directory to run the vote sync-error check. The native observation instructions below remain valid.
+
 Read [the topology map](../../docs/research/production-topology.md) and [protocol](protocol.md) first. Preserving the actual worker, batch formation, callback timing and shared state is the point of the experiment.
 
 ## Restore and run
@@ -28,4 +30,4 @@ The native worker still uses production scheduling/timing. Fixed workload input 
 
 The original example did not compile due to an incorrect `TypeConfigExt` import. That failure and its empty trials file remain in `results/2026-09-18/topology/`. The cleaned example imports the trait from `openraft::type_config` and derives the abandoned-waiter count rather than hard-coding it. Current execution status is in [STATUS](../../docs/STATUS.md).
 
-No consensus or WAL algorithm is rewritten. The existing source archives have no semantic tracked patches; this example is the separate experimental addition.
+No consensus or WAL algorithm is rewritten by the baseline example. The archived source snapshots remain pristine. The controlled experiment's separate patches add checkpoints and I/O wrappers; their scope and limitations are documented in the current-results report.

@@ -1,0 +1,6 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling databend-meta-raft-log v260629.7.0 (/tmp/adversary-controlled-fresh/databend-meta/crates/server/raft-log)
+    Finished `dev` profile [unoptimized] target(s) in 17.90s
+     Running `/tmp/adversary-topology-20260918/work/target/debug/examples/controlled_failure_probe`

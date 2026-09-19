@@ -1,0 +1,18 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running tests/corruption.rs (/tmp/adversary-historical-target-cw/debug/deps/corruption-84ceecf3e4136365)
+
+running 1 test
+test test_zero_filled_tail_chunk_is_removed ... FAILED
+
+failures:
+
+---- test_zero_filled_tail_chunk_is_removed stdout ----
+Error: Custom { kind: InvalidData, error: "unexpected action type id 0; when:(decode Record at offset 0); when:(iterate ChunkId(00_000_000_000_000_000_041))" }
+
+
+failures:
+    test_zero_filled_tail_chunk_is_removed
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.14s
+
+error: test failed, to rerun pass `--test corruption`

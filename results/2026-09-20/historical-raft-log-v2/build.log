@@ -1,0 +1,70 @@
+    Updating crates.io index
+     Locking 106 packages to latest Rust 1.94.0-nightly compatible versions
+      Adding thiserror v1.0.69 (available: v2.0.20)
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.hfeYm1)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.25s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.hfeYm1)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.83s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.hfeYm1)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.78s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.hfeYm1)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.78s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+    Updating crates.io index
+     Locking 10 packages to latest Rust 1.94.0-nightly compatible versions
+      Adding getrandom v0.3.4
+      Adding ppv-lite86 v0.2.21
+      Adding r-efi v5.3.0
+      Adding rand v0.9.5 (available: v0.10.2)
+      Adding rand_chacha v0.9.0
+      Adding rand_core v0.9.5
+      Adding wasip2 v1.0.4+wasi-0.2.12
+      Adding wit-bindgen v0.57.1
+      Adding zerocopy v0.8.57
+      Adding zerocopy-derive v0.8.57
+   Compiling getrandom v0.3.4
+   Compiling zerocopy v0.8.57
+   Compiling rand_core v0.9.5
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.hfeYm1)
+   Compiling ppv-lite86 v0.2.21
+   Compiling rand_chacha v0.9.0
+   Compiling rand v0.9.5
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 7.79s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.hfeYm1)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.79s
+     Running `/tmp/adversary-historical-raft-log-target/debug/examples/historical_state_safety`
+    Updating crates.io index
+     Locking 1 package to latest Rust 1.94.0-nightly compatible version
+ Downgrading codeq v0.6.2 -> v0.5.2 (available: v0.6.2)
+   Compiling codeq v0.5.2
+   Compiling raft-log v0.2.13 (/tmp/adversary-history-raft-log.hfeYm1)
+error[E0061]: this method takes 1 argument but 2 arguments were supplied
+   --> examples/historical_callback.rs:42:9
+    |
+ 42 |     log.flush(false, Some(tx))?;
+    |         ^^^^^        -------- unexpected argument #2 of type `Option<SyncSender<_>>`
+    |
+note: expected `SyncSender<Result<(), Error>>`, found `bool`
+   --> examples/historical_callback.rs:42:15
+    |
+ 42 |     log.flush(false, Some(tx))?;
+    |               ^^^^^
+    = note: expected struct `SyncSender<Result<(), std::io::Error>>`
+                 found type `bool`
+note: method defined here
+   --> /tmp/adversary-history-raft-log.hfeYm1/src/api/raft_log_writer.rs:122:8
+    |
+122 |     fn flush(&mut self, callback: T::Callback) -> Result<(), io::Error>;
+    |        ^^^^^
+help: remove the extra argument
+    |
+ 42 -     log.flush(false, Some(tx))?;
+ 42 +     log.flush(/* SyncSender<Result<(), std::io::Error>> */)?;
+    |
+
+For more information about this error, try `rustc --explain E0061`.
+error: could not compile `raft-log` (example "historical_callback") due to 1 previous error

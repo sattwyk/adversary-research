@@ -1,0 +1,3 @@
+   Compiling chunked-wal v0.2.2 (/tmp/adversary-history-zero-tail.jgBQkn)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.78s
+  Executable tests/corruption.rs (/tmp/adversary-historical-target-cw/debug/deps/corruption-84ceecf3e4136365)

@@ -1,0 +1,10 @@
+{"trial":0,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":1,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":2,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":3,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":4,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":5,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":6,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":7,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":8,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}
+{"trial":9,"entries":64,"recovered_equal":true,"batches":[4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 2, 1, 1],"worker_events":514,"short_write_calls":1988,"sync_calls":26}

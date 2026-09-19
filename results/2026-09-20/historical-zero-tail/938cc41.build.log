@@ -1,0 +1,6 @@
+    Updating crates.io index
+     Locking 38 packages to latest Rust 1.94.0-nightly compatible versions
+      Adding thiserror v1.0.69 (available: v2.0.20)
+   Compiling chunked-wal v0.2.2 (/tmp/adversary-history-zero-tail.jgBQkn)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.45s
+  Executable tests/corruption.rs (/tmp/adversary-historical-target-cw/debug/deps/corruption-84ceecf3e4136365)

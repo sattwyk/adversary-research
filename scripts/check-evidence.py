@@ -46,6 +46,25 @@ def main():
         assert trial["abandoned_waiters"] == 24
         assert trial["batches"], "An empty logger result is not batching evidence"
     distinct = len({tuple(trial["batches"]) for trial in trials})
+    controlled_path = ROOT / "results/2026-09-20/controlled-topology/trials.jsonl"
+    controlled = [json.loads(line) for line in controlled_path.read_text().splitlines()]
+    assert len(controlled) == 10
+    for index, trial in enumerate(controlled):
+        assert trial["trial"] == index
+        assert trial["recovered_equal"] and trial["entries"] == 64
+        assert trial["worker_events"] == 514
+        assert trial["short_write_calls"] == 1988
+        assert trial["sync_calls"] == 26
+        assert trial["batches"] == controlled[0]["batches"]
+    failure_path = ROOT / "results/2026-09-20/controlled-sync-failure-final/trials.jsonl"
+    failure = json.loads(failure_path.read_text())
+    assert failure["first_error"] == failure["idle_error"] == "StorageFull"
+    assert failure["later_error"] == "Other" and failure["sync_calls"] == 1
+    history_path = ROOT / "results/2026-09-20/historical-state-final/state.jsonl"
+    history = [json.loads(line) for line in history_path.read_text().splitlines()]
+    assert len(history) == 6
+    assert [record["rejected"] for record in history] == [False, True] * 3
+    print("PASS: ten controlled replay records, sync failure, six historical state records.")
     print(f"PASS: shell syntax, archive hashes, local documentation links, 20 recorded native trials ({distinct} distinct batch sequences).")
 
 

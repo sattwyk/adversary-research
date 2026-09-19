@@ -1,4 +1,15 @@
-# Evidence status — 19 September 2026
+# Evidence status — 20 September 2026
+
+## New topology evidence
+
+See the [complete current-results report](research/topology-experiment-results.md) for scope, source-change counts, historical commit links and the 16-question assessment.
+
+- Ten controlled native-worker trials recovered 64 entries each with identical in-memory worker-event vectors. Each trial recorded 22 batches, 514 events, 1,988 short-write calls and 26 sync calls.
+- A first-sync StorageFull injection propagated through Databend save_vote and worker-idle wait; later save_vote failed promptly.
+- Four historical failing scenarios were reproduced across three fixing commits: commit beyond last, committed truncation, conflicting purge identity, and zero-filled tail recovery.
+- The controlled preparation patches apply to fresh source archives.
+
+These are storage-slice results. Native clock expiry, producer interleavings and multiple owners are not fully controlled. This is not a general deterministic cluster or a finished execution-topology experiment.
 
 ## Completed and revalidated
 
@@ -22,7 +33,7 @@ The continuation probes also ran previously on Windows. Separate successful Linu
 
 - Full Databend multi-node deterministic integration preserving the actual worker topology.
 - Matched implementations in Commonware, Turmoil, MadSim, native fibers and suspended Wasm.
-- Historical bug rediscovery and an independently labeled mutant corpus.
+- Broader historical bug rediscovery through the distributed target and an independently labeled mutant corpus.
 - Qualified filesystem/device power-loss correspondence.
 - Comparative exploration throughput and diagnostic effectiveness.
 - Guest threading, shared-memory/native-runtime fidelity, and full WIT/component integration for redb.

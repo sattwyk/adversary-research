@@ -6,6 +6,8 @@ An adversarial investigation of deterministic testing **above the OS**, preservi
 
 ## Start here
 
+**Latest:** [Execution-topology results, 20 September](docs/research/topology-experiment-results.md). Ten controlled native-worker replays passed; vote sync-error propagation and four historical regression scenarios were exercised. Full cluster, competitor, exploration and power-loss validation remain unperformed. The report answers all 16 requested questions with those limitations explicit.
+
 1. [Evidence and project status](docs/STATUS.md): what ran, what failed, and what remains untested.
 2. [Full continuation review](docs/research/continuation-review.md): the main architecture analysis, implementation references, alternatives, and falsification protocols.
 3. [Production topology](docs/research/production-topology.md): Databend Meta / OpenRaft / raft-log / chunked-wal workers, callbacks, queues, locks and durability.

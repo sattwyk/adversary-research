@@ -1,0 +1,564 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index 00c2fcd..c430cb0 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -14,6 +14,11 @@ keywords = ["wal", "log", "storage"]
+ license = "MIT OR Apache-2.0"
+ repository = "https://github.com/drmingdrmer/chunked-wal"
+ 
++[features]
++# Experiment-only control points. The default production build contains no
++# installed controller and follows the original native worker path.
++adversary = []
++
+ [dependencies]
+ base2histogram = { version = "0.2.3" }
+ byteorder = { version = "1.5.0" }
+diff --git a/src/adversary.rs b/src/adversary.rs
+new file mode 100644
+index 0000000..5fc194d
+--- /dev/null
++++ b/src/adversary.rs
+@@ -0,0 +1,226 @@
++//! Experiment-only control points for the production flush worker.
++//!
++//! This module does not implement a WAL or a scheduler. It lets an external
++//! deterministic scheduler stop the existing native worker at its semantic
++//! boundaries and decide the result of the syscalls the worker already makes.
++
++use std::fs::File;
++use std::io;
++use std::io::IoSlice;
++use std::io::Write;
++#[cfg(feature = "adversary")]
++use std::sync::Arc;
++#[cfg(feature = "adversary")]
++use std::sync::OnceLock;
++#[cfg(feature = "adversary")]
++use std::sync::RwLock;
++
++/// The kind of request crossing the existing bounded worker queue.
++#[derive(Clone, Copy, Debug, PartialEq, Eq)]
++pub enum RequestKind {
++    Write,
++    AppendFile,
++    RemoveChunks,
++    GetFlushStat,
++}
++
++/// Observable synchronization and effect boundaries in the native worker.
++#[derive(Clone, Debug, PartialEq, Eq)]
++pub enum Event {
++    BeforeSend {
++        seq: u64,
++        kind: RequestKind,
++        bytes: usize,
++        sync: bool,
++    },
++    AfterReserve {
++        seq: u64,
++    },
++    AfterSend {
++        seq: u64,
++        accepted: bool,
++    },
++    BeforeFirstReceive,
++    AfterFirstReceive {
++        seq: Option<u64>,
++    },
++    BeforeBatchReceive {
++        items: usize,
++    },
++    AfterBatchReceive {
++        seq: Option<u64>,
++    },
++    BeforeWrite {
++        items: usize,
++        bytes: usize,
++    },
++    AfterWrite {
++        succeeded: bool,
++    },
++    BeforeSync {
++        upto_offset: u64,
++        files: usize,
++    },
++    AfterSync {
++        upto_offset: u64,
++        succeeded: bool,
++    },
++    BeforePersistedCallback {
++        upto_offset: u64,
++    },
++    AfterPersistedCallback {
++        upto_offset: u64,
++    },
++    BeforeRequestCallback {
++        upto_offset: u64,
++    },
++    AfterRequestCallback {
++        upto_offset: u64,
++    },
++    BeforeComplete {
++        seq: u64,
++    },
++    AfterComplete {
++        seq: u64,
++    },
++    BeforeNonWrite {
++        kind: RequestKind,
++    },
++    AfterNonWrite {
++        kind: RequestKind,
++        succeeded: bool,
++    },
++    WorkerStopped {
++        succeeded: bool,
++    },
++}
++
++/// Decision at the worker's existing timed receive boundary.
++#[derive(Clone, Copy, Debug, PartialEq, Eq)]
++pub enum BatchReceive {
++    /// Execute the production `recv_timeout` call.
++    Native,
++    /// End the current batch as though its receive deadline expired.
++    Timeout,
++}
++
++/// Controller implemented by the experimental deterministic scheduler.
++///
++/// Default effect methods call the same native syscalls as the unmodified
++/// worker. Implementations may delay at `checkpoint`, return short writes, or
++/// inject errors without replacing the worker's batching and callback logic.
++#[cfg(feature = "adversary")]
++pub trait Controller: Send + Sync + 'static {
++    fn checkpoint(&self, event: Event);
++
++    fn batch_receive(&self, items: usize) -> BatchReceive {
++        let _ = items;
++        BatchReceive::Native
++    }
++
++    fn write_vectored(
++        &self,
++        file: &File,
++        bufs: &[IoSlice<'_>],
++    ) -> io::Result<usize> {
++        let mut file = file;
++        file.write_vectored(bufs)
++    }
++
++    fn sync_data(&self, file: &File) -> io::Result<()> {
++        file.sync_data()
++    }
++}
++
++#[cfg(feature = "adversary")]
++fn slot() -> &'static RwLock<Option<Arc<dyn Controller>>> {
++    static SLOT: OnceLock<RwLock<Option<Arc<dyn Controller>>>> =
++        OnceLock::new();
++    SLOT.get_or_init(|| RwLock::new(None))
++}
++
++/// Installs one process-wide controller for an experiment trial.
++#[cfg(feature = "adversary")]
++pub fn install(controller: Arc<dyn Controller>) -> ControllerGuard {
++    let mut guard = slot().write().unwrap();
++    assert!(
++        guard.is_none(),
++        "an adversary controller is already installed"
++    );
++    *guard = Some(controller);
++    ControllerGuard { installed: true }
++}
++
++/// Clears the controller at the end of a trial.
++#[cfg(feature = "adversary")]
++pub struct ControllerGuard {
++    installed: bool,
++}
++
++#[cfg(feature = "adversary")]
++impl Drop for ControllerGuard {
++    fn drop(&mut self) {
++        if self.installed {
++            *slot().write().unwrap() = None;
++            self.installed = false;
++        }
++    }
++}
++
++#[cfg(feature = "adversary")]
++fn current() -> Option<Arc<dyn Controller>> {
++    slot().read().unwrap().clone()
++}
++
++pub(crate) fn checkpoint(event: Event) {
++    #[cfg(feature = "adversary")]
++    {
++        if let Some(controller) = current() {
++            controller.checkpoint(event);
++        }
++    }
++    #[cfg(not(feature = "adversary"))]
++    {
++        let _ = event;
++    }
++}
++
++pub(crate) fn batch_receive(items: usize) -> BatchReceive {
++    #[cfg(feature = "adversary")]
++    {
++        return current()
++            .map(|controller| controller.batch_receive(items))
++            .unwrap_or(BatchReceive::Native);
++    }
++    #[cfg(not(feature = "adversary"))]
++    {
++        let _ = items;
++        BatchReceive::Native
++    }
++}
++
++pub(crate) fn write_vectored(
++    file: &File,
++    bufs: &[IoSlice<'_>],
++) -> io::Result<usize> {
++    #[cfg(feature = "adversary")]
++    {
++        if let Some(controller) = current() {
++            return controller.write_vectored(file, bufs);
++        }
++    }
++
++    let mut file = file;
++    file.write_vectored(bufs)
++}
++
++pub(crate) fn sync_data(file: &File) -> io::Result<()> {
++    #[cfg(feature = "adversary")]
++    {
++        if let Some(controller) = current() {
++            return controller.sync_data(file);
++        }
++    }
++
++    file.sync_data()
++}
+diff --git a/src/lib.rs b/src/lib.rs
+index db63fc1..8043531 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -1,5 +1,6 @@
+ //! Chunked write-ahead log.
+ 
++pub mod adversary;
+ pub mod api;
+ pub mod errors;
+ pub mod stat;
+diff --git a/src/wal/flush_client.rs b/src/wal/flush_client.rs
+index 9be005d..1bb311c 100644
+--- a/src/wal/flush_client.rs
++++ b/src/wal/flush_client.rs
+@@ -4,6 +4,9 @@ use std::sync::mpsc::SyncSender;
+ use std::time::Instant;
+ 
+ use crate::WalTypes;
++use crate::adversary;
++use crate::adversary::Event;
++use crate::adversary::RequestKind;
+ use crate::wal::flush_request::SeqRequest;
+ use crate::wal::flush_request::WorkerRequest;
+ use crate::wal::flush_worker::WorkerState;
+@@ -50,6 +53,15 @@ where W: WalTypes
+             ));
+         };
+ 
++        let next_seq = self.sent_seq + 1;
++        let (kind, bytes, sync) = request_meta(&req);
++        adversary::checkpoint(Event::BeforeSend {
++            seq: next_seq,
++            kind,
++            bytes,
++            sync,
++        });
++
+         // Reserve the request's memory before queueing it, so a slow worker
+         // throttles the sender instead of letting queued data grow without
+         // bound.
+@@ -58,6 +70,7 @@ where W: WalTypes
+             _ => 0,
+         };
+         self.state.queued_bytes().acquire(reserved);
++        adversary::checkpoint(Event::AfterReserve { seq: next_seq });
+ 
+         self.sent_seq += 1;
+         let res = tx
+@@ -74,6 +87,11 @@ where W: WalTypes
+             self.state.queued_bytes().release(reserved);
+         }
+ 
++        adversary::checkpoint(Event::AfterSend {
++            seq: self.sent_seq,
++            accepted: res.is_ok(),
++        });
++
+         res
+     }
+ 
+@@ -98,3 +116,20 @@ where W: WalTypes
+         self.state.done_seq()
+     }
+ }
++
++fn request_meta<W: WalTypes>(
++    req: &WorkerRequest<W>,
++) -> (RequestKind, usize, bool) {
++    match req {
++        WorkerRequest::Write(write) => {
++            (RequestKind::Write, write.data.len(), write.sync)
++        }
++        WorkerRequest::AppendFile(_) => (RequestKind::AppendFile, 0, false),
++        WorkerRequest::RemoveChunks { .. } => {
++            (RequestKind::RemoveChunks, 0, false)
++        }
++        WorkerRequest::GetFlushStat { .. } => {
++            (RequestKind::GetFlushStat, 0, false)
++        }
++    }
++}
+diff --git a/src/wal/flush_worker.rs b/src/wal/flush_worker.rs
+index b544aa2..eb832f8 100644
+--- a/src/wal/flush_worker.rs
++++ b/src/wal/flush_worker.rs
+@@ -1,7 +1,6 @@
+ use std::fs::File;
+ use std::io;
+ use std::io::IoSlice;
+-use std::io::Write;
+ use std::os::unix::fs::MetadataExt;
+ use std::panic::AssertUnwindSafe;
+ use std::sync::Arc;
+@@ -18,6 +17,9 @@ use log::info;
+ 
+ use crate::Config;
+ use crate::WalTypes;
++use crate::adversary;
++use crate::adversary::BatchReceive;
++use crate::adversary::Event;
+ use crate::wal::atomic_flush_metrics::AtomicFlushMetrics;
+ use crate::wal::batch_metrics::BatchMetrics;
+ use crate::wal::callback::Callback;
+@@ -160,6 +162,9 @@ where W: WalTypes
+         // so a sender blocked on the byte limit wakes and sees the closed
+         // channel instead of waiting forever.
+         self.worker_state.queued_bytes().release_all();
++        adversary::checkpoint(Event::WorkerStopped {
++            succeeded: matches!(res, Ok(Ok(()))),
++        });
+ 
+         let err = match res {
+             Ok(Ok(())) => return,
+@@ -182,7 +187,11 @@ where W: WalTypes
+         loop {
+             batch.reset();
+ 
++            adversary::checkpoint(Event::BeforeFirstReceive);
+             let req = self.rx.recv();
++            adversary::checkpoint(Event::AfterFirstReceive {
++                seq: req.as_ref().ok().map(|request| request.seq),
++            });
+             let Ok(seq_req) = req else {
+                 log::info!("FlushWorker input channel closed, quit");
+                 return Ok(());
+@@ -194,8 +203,17 @@ where W: WalTypes
+                 else {
+                     unreachable!("non-write request must be stored");
+                 };
+-                self.handle_non_flush_request(req)?;
++                let kind = request_kind(&req);
++                adversary::checkpoint(Event::BeforeNonWrite { kind });
++                let result = self.handle_non_flush_request(req);
++                adversary::checkpoint(Event::AfterNonWrite {
++                    kind,
++                    succeeded: result.is_ok(),
++                });
++                result?;
++                adversary::checkpoint(Event::BeforeComplete { seq });
+                 self.worker_state.complete(seq);
++                adversary::checkpoint(Event::AfterComplete { seq });
+                 continue;
+             }
+ 
+@@ -206,6 +224,11 @@ where W: WalTypes
+             let batch_bytes: usize =
+                 batch.writes.iter().map(|w| w.write.data.len()).sum();
+ 
++            adversary::checkpoint(Event::BeforeWrite {
++                items: batch.writes.len(),
++                bytes: batch_bytes,
++            });
++
+             let sync_result = {
+                 // TODO: possible to use write_all_vectored()?
+ 
+@@ -221,6 +244,9 @@ where W: WalTypes
+                 let write_res =
+                     write_batch_vectored(&mut last_file, &batch.writes);
+                 batch_metrics.record_write_time(write_start);
++                adversary::checkpoint(Event::AfterWrite {
++                    succeeded: write_res.is_ok(),
++                });
+ 
+                 let need_sync = batch.writes.iter().any(|w| w.write.sync);
+ 
+@@ -229,7 +255,15 @@ where W: WalTypes
+                         let upto_offset =
+                             batch.writes.last().unwrap().write.upto_offset;
+                         let sync_start = Instant::now();
++                        adversary::checkpoint(Event::BeforeSync {
++                            upto_offset,
++                            files: self.files.len(),
++                        });
+                         let res = self.sync_data_files(upto_offset);
++                        adversary::checkpoint(Event::AfterSync {
++                            upto_offset,
++                            succeeded: res.is_ok(),
++                        });
+                         batch_metrics.record_sync_time(sync_start);
+                         if let Err(ref e) = res {
+                             log::error!(
+@@ -255,6 +289,10 @@ where W: WalTypes
+ 
+             for w in batch.writes.drain(..) {
+                 if let Some(cb) = w.write.callback {
++                    let upto_offset = w.write.upto_offset;
++                    adversary::checkpoint(Event::BeforeRequestCallback {
++                        upto_offset,
++                    });
+                     match &sync_result {
+                         Ok(()) => cb.send(Ok(())),
+                         Err(e) => {
+@@ -264,6 +302,9 @@ where W: WalTypes
+                             )));
+                         }
+                     }
++                    adversary::checkpoint(Event::AfterRequestCallback {
++                        upto_offset,
++                    });
+                 }
+             }
+ 
+@@ -278,11 +319,20 @@ where W: WalTypes
+                 ..
+             }) = last_non_flush
+             {
+-                self.handle_non_flush_request(last)?;
++                let kind = request_kind(&last);
++                adversary::checkpoint(Event::BeforeNonWrite { kind });
++                let result = self.handle_non_flush_request(last);
++                adversary::checkpoint(Event::AfterNonWrite {
++                    kind,
++                    succeeded: result.is_ok(),
++                });
++                result?;
+                 max_seq = max_seq.max(nf_seq);
+             }
+ 
++            adversary::checkpoint(Event::BeforeComplete { seq: max_seq });
+             self.worker_state.complete(max_seq);
++            adversary::checkpoint(Event::AfterComplete { seq: max_seq });
+         }
+     }
+ 
+@@ -298,16 +348,34 @@ where W: WalTypes
+                 break;
+             }
+ 
++            adversary::checkpoint(Event::BeforeBatchReceive {
++                items: batch.writes.len(),
++            });
++            if adversary::batch_receive(batch.writes.len())
++                == BatchReceive::Timeout
++            {
++                adversary::checkpoint(Event::AfterBatchReceive { seq: None });
++                break;
++            }
++
+             let remaining = loop_deadline - now;
+             match self.rx.recv_timeout(remaining) {
+                 Ok(seq_req) => {
++                    adversary::checkpoint(Event::AfterBatchReceive {
++                        seq: Some(seq_req.seq),
++                    });
+                     if !batch.push_seq_request(seq_req) {
+                         break;
+                     }
+                 }
+                 Err(
+                     RecvTimeoutError::Timeout | RecvTimeoutError::Disconnected,
+-                ) => break,
++                ) => {
++                    adversary::checkpoint(Event::AfterBatchReceive {
++                        seq: None,
++                    });
++                    break;
++                }
+             }
+         }
+ 
+@@ -369,15 +437,21 @@ where W: WalTypes
+         // site that performs the metadata update.
+         while files.len() > 1 {
+             let f = files.remove(0);
+-            f.f.sync_data()?;
++            adversary::sync_data(&f.f)?;
+         }
+ 
+         let f = &mut files[0];
+-        f.f.sync_data()?;
++        adversary::sync_data(&f.f)?;
++        adversary::checkpoint(Event::BeforePersistedCallback {
++            upto_offset: offset,
++        });
+         f.on_persisted.call(ChunkPersisted {
+             starting_offset: f.starting_offset,
+             synced_offset: offset,
+         });
++        adversary::checkpoint(Event::AfterPersistedCallback {
++            upto_offset: offset,
++        });
+         f.sync_id = offset;
+ 
+         Ok(())
+@@ -432,7 +506,7 @@ fn write_all_vectored(
+     let mut remaining = io_slices;
+ 
+     while !remaining.is_empty() {
+-        let written = match file.write_vectored(remaining) {
++        let written = match adversary::write_vectored(file, remaining) {
+             Ok(0) => {
+                 return Err(io::Error::new(
+                     io::ErrorKind::WriteZero,
+@@ -450,6 +524,19 @@ fn write_all_vectored(
+     Ok(())
+ }
+ 
++fn request_kind<W: WalTypes>(
++    req: &WorkerRequest<W>,
++) -> crate::adversary::RequestKind {
++    use crate::adversary::RequestKind;
++
++    match req {
++        WorkerRequest::Write(_) => RequestKind::Write,
++        WorkerRequest::AppendFile(_) => RequestKind::AppendFile,
++        WorkerRequest::RemoveChunks { .. } => RequestKind::RemoveChunks,
++        WorkerRequest::GetFlushStat { .. } => RequestKind::GetFlushStat,
++    }
++}
++
+ #[cfg(test)]
+ mod tests {
+     use std::io;
+

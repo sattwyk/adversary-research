@@ -1,0 +1,94 @@
+    Updating crates.io index
+     Locking 106 packages to latest Rust 1.94.0-nightly compatible versions
+      Adding thiserror v1.0.69 (available: v2.0.20)
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling siphasher v1.0.3
+   Compiling serde_core v1.0.229
+   Compiling libc v0.2.189
+   Compiling syn v3.0.6
+   Compiling phf_shared v0.11.3
+   Compiling regex-syntax v0.8.11
+   Compiling unicode-segmentation v1.13.3
+   Compiling rand_core v0.6.4
+   Compiling autocfg v1.5.1
+   Compiling serde v1.0.229
+   Compiling num-traits v0.2.19
+   Compiling rand v0.8.8
+   Compiling serde_derive v1.0.229
+   Compiling regex-automata v0.4.18
+   Compiling regex v1.13.1
+   Compiling phf_generator v0.11.3
+   Compiling syn v2.0.119
+   Compiling cfg-if v1.0.5
+   Compiling phf_codegen v0.11.3
+   Compiling parse-zoneinfo v0.3.1
+   Compiling phf v0.11.3
+   Compiling chrono-tz-build v0.2.1
+   Compiling convert_case v0.6.0
+   Compiling crc32fast v1.5.2
+   Compiling anyhow v1.0.104
+   Compiling unicode-xid v0.2.6
+   Compiling derive_more-impl v1.0.0
+   Compiling chrono-tz v0.8.6
+   Compiling once_cell v1.21.4
+   Compiling iana-time-zone v0.1.65
+   Compiling thiserror v1.0.69
+   Compiling getrandom v0.4.3
+   Compiling rustix v1.1.5
+   Compiling chrono v0.4.45
+   Compiling derive_more v1.0.0
+   Compiling thiserror-impl v1.0.69
+   Compiling byteorder v1.5.0
+   Compiling linux-raw-sys v0.12.1
+   Compiling bitflags v2.13.2
+   Compiling codeq v0.6.2
+   Compiling console v0.15.11
+   Compiling fs2 v0.4.3
+   Compiling similar v2.7.0
+   Compiling yansi v1.0.1
+   Compiling fastrand v2.5.0
+   Compiling base2histogram v0.2.3
+   Compiling log v0.4.34
+   Compiling chunked-wal v0.2.3
+   Compiling similar-asserts v1.7.0
+   Compiling tempfile v3.27.0
+   Compiling display-more v0.2.6
+   Compiling rmp v0.8.15
+   Compiling static_assertions v1.1.0
+   Compiling scopeguard v1.2.0
+   Compiling diff v0.1.13
+   Compiling rmp-serde v1.3.1
+   Compiling pretty_assertions v1.4.1
+   Compiling goldenfile v1.11.0
+   Compiling raft-log v0.4.4 (/tmp/adversary-history-raft-log.Jop2OP)
+   Compiling indoc v2.0.7
+error[E0433]: failed to resolve: use of unresolved module or unlinked crate `anyhow`
+  --> examples/historical_state_safety.rs:61:18
+   |
+61 |         other => anyhow::bail!("unknown scenario: {other}"),
+   |                  ^^^^^^ use of unresolved module or unlinked crate `anyhow`
+
+error[E0282]: type annotations needed
+  --> examples/historical_state_safety.rs:65:35
+   |
+65 |     let error = result.err().map(|err| err.to_string());
+   |                                   ^^^  --- type must be known at this point
+   |
+help: consider giving this closure parameter an explicit type
+   |
+65 |     let error = result.err().map(|err: /* Type */| err.to_string());
+   |                                      ++++++++++++
+
+error[E0433]: failed to resolve: use of unresolved module or unlinked crate `anyhow`
+  --> examples/historical_state_safety.rs:34:14
+   |
+34 | fn main() -> anyhow::Result<()> {
+   |              ^^^^^^ use of unresolved module or unlinked crate `anyhow`
+   |
+   = help: if you wanted to use a crate named `anyhow`, use `cargo add anyhow` to add it to your `Cargo.toml`
+
+Some errors have detailed explanations: E0282, E0433.
+For more information about an error, try `rustc --explain E0282`.
+error: could not compile `raft-log` (example "historical_state_safety") due to 3 previous errors
