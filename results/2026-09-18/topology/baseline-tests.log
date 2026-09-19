@@ -1,0 +1,31 @@
+    Finished `test` profile [unoptimized] target(s) in 6.85s
+     Running unittests src/lib.rs (/tmp/adversary-topology-20260918/work/target/debug/deps/databend_meta_raft_log-c1037b3f438eae43)
+
+running 11 tests
+test callback::tests::test_a_gone_receiver_is_only_logged ... ok
+test callback::tests::test_constructors_stamp_the_flush_time ... ok
+test callback::tests::test_sync_oneshot_callback_delivers_success_and_error ... ok
+test callback::tests::test_oneshot_callback_delivers_success_and_error ... ok
+test codec_wrapper::tests::test_cw_codec ... ok
+test io_desc::tests::test_constructors_carry_subject_verb_and_context ... ok
+test io_desc::tests::test_display ... ok
+test io_desc::tests::test_errors_carry_the_subject_verb_and_context ... ok
+test io_desc::tests::test_ok_messages_name_the_phase ... ok
+test io_desc::tests::test_timestamps_advance_and_total_duration_ends_at_flush ... ok
+test io_phase::tests::test_display ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/it/main.rs (/tmp/adversary-topology-20260918/work/target/debug/deps/it-868e1bb848cf7eac)
+
+running 1 test
+test log_store_recovery::test_raft_log_recovery_after_truncation ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+   Doc-tests databend_meta_raft_log
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

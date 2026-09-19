@@ -1,0 +1,281 @@
+ Downloading crates ...
+  Downloaded ahash v0.8.12
+  Downloaded ctrlc v3.5.2
+  Downloaded hostname v0.3.1
+  Downloaded which v4.4.2
+  Downloaded rustc-hash v1.1.0
+  Downloaded strum v0.24.1
+  Downloaded prometheus-client-derive-encode v0.4.2
+  Downloaded multimap v0.8.3
+  Downloaded flatbuffers v25.12.19
+  Downloaded num-integer v0.1.47
+  Downloaded parking_lot_core v0.8.6
+  Downloaded env_logger v0.11.11
+  Downloaded paste v1.0.15
+  Downloaded prost-derive v0.11.9
+  Downloaded fs_extra v1.3.0
+  Downloaded lexical-core v1.0.6
+  Downloaded strum_macros v0.24.3
+  Downloaded dashmap v5.5.3
+  Downloaded tagptr v0.2.0
+  Downloaded crossbeam-utils v0.8.23
+  Downloaded crossbeam-epoch v0.9.21
+  Downloaded home v0.5.12
+  Downloaded backon v1.6.0
+  Downloaded prost-types v0.11.9
+  Downloaded prost-build v0.11.9
+  Downloaded prost v0.11.9
+  Downloaded arrow-buffer v58.4.0
+  Downloaded lexical-parse-integer v1.0.6
+  Downloaded arrow-data v58.4.0
+  Downloaded prometheus-client v0.22.3
+  Downloaded prettyplease v0.1.25
+  Downloaded num-format v0.4.4
+  Downloaded arrow-row v58.4.0
+  Downloaded lexical-write-integer v1.0.6
+  Downloaded jsonwebtoken v9.3.1
+  Downloaded uuid v1.26.1
+  Downloaded num-bigint v0.4.8
+  Downloaded lexical-write-float v1.0.6
+  Downloaded jiff-core v0.1.1
+  Downloaded portable-atomic v1.15.0
+  Downloaded lexical-parse-float v1.0.6
+  Downloaded moka v0.12.16
+  Downloaded lexical-util v1.0.7
+  Downloaded itertools v0.10.5
+  Downloaded rustix v0.38.44
+  Downloaded nix v0.31.3
+  Downloaded arrow-array v58.4.0
+  Downloaded jiff v0.2.37
+  Downloaded im v15.1.0
+  Downloaded crossbeam-channel v0.5.17
+  Downloaded feature-set v0.1.1
+  Downloaded arrow-select v58.4.0
+  Downloaded arrow-ipc v58.4.0
+  Downloaded structkey-derive v0.1.1
+  Downloaded tonic-reflection v0.14.6
+  Downloaded span-map v0.2.0
+  Downloaded logcall v0.1.13
+  Downloaded arrow-cast v58.4.0
+  Downloaded arrow-schema v58.4.0
+  Downloaded half v2.7.1
+  Downloaded arrow-arith v58.4.0
+  Downloaded parking_lot v0.11.2
+  Downloaded arrow-string v58.4.0
+  Downloaded match_cfg v0.1.0
+  Downloaded instant v0.1.13
+  Downloaded env_filter v2.0.0
+  Downloaded crunchy v0.2.4
+  Downloaded atoi v2.0.0
+  Downloaded structkey v0.1.1
+  Downloaded linux-raw-sys v0.4.15
+  Downloaded codeq v0.5.2
+  Downloaded arrow-ord v58.4.0
+  Downloaded arrow-flight v58.4.0
+  Downloaded rotbl v0.2.10
+    Blocking waiting for file lock on artifact directory
+   Compiling libc v0.2.189
+   Compiling libm v0.2.16
+   Compiling num-traits v0.2.19
+   Compiling either v1.18.0
+   Compiling syn v1.0.109
+   Compiling find-msvc-tools v0.1.13
+   Compiling shlex v2.0.1
+   Compiling cc v1.4.7
+   Compiling parking_lot_core v0.9.12
+   Compiling parking_lot v0.12.5
+   Compiling errno v0.3.14
+   Compiling signal-hook-registry v1.4.8
+   Compiling mio v1.2.3
+   Compiling socket2 v0.6.5
+   Compiling chrono v0.4.45
+   Compiling tokio v1.53.1
+   Compiling getrandom v0.2.17
+   Compiling ring v0.17.14
+   Compiling itertools v0.14.0
+   Compiling zerocopy v0.8.57
+   Compiling prost-derive v0.14.4
+   Compiling zerocopy-derive v0.8.57
+   Compiling version_check v0.9.5
+   Compiling tokio-util v0.7.19
+   Compiling getrandom v0.4.3
+   Compiling h2 v0.4.19
+   Compiling rustls v0.23.45
+   Compiling getrandom v0.3.4
+   Compiling subtle v2.6.1
+   Compiling chrono-tz v0.8.6
+   Compiling hyper v1.11.1
+   Compiling tower v0.5.3
+   Compiling rustls-webpki v0.103.15
+   Compiling axum v0.8.9
+   Compiling hyper-util v0.1.20
+   Compiling tokio-stream v0.1.19
+   Compiling prost v0.14.4
+   Compiling arrayvec v0.7.8
+   Compiling hyper-timeout v0.5.2
+   Compiling serde_json v1.0.151
+   Compiling petgraph v0.8.3
+   Compiling prost-types v0.14.4
+   Compiling rand v0.10.2
+   Compiling deepsize_derive v0.1.2
+   Compiling prost-build v0.14.4
+   Compiling deepsize v0.2.0
+   Compiling display-more v0.2.6
+   Compiling tokio-rustls v0.26.5
+   Compiling tonic v0.14.6
+   Compiling map-api v0.5.0 (https://github.com/databendlabs/map-api?tag=v0.5.0#556bde71)
+   Compiling tonic-prost-build v0.14.6
+   Compiling openraft-rt v0.10.0-alpha.34
+   Compiling rust_decimal v1.43.0
+   Compiling display-more v0.2.0 (https://github.com/databendlabs/display-more?tag=v0.2.0#8a3e8351)
+   Compiling byte-unit v5.2.6
+   Compiling state-machine-api v0.4.0 (https://github.com/databendlabs/state-machine-api?tag=v0.4.0#7abd898d)
+   Compiling openraft-rt-tokio v0.10.0-alpha.34
+   Compiling databend-meta-proto v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/common/proto)
+   Compiling openraft v0.10.0-alpha.29
+   Compiling databend-meta-base v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/base)
+   Compiling tonic-prost v0.14.6
+   Compiling num-integer v0.1.47
+   Compiling crossbeam-utils v0.8.23
+   Compiling num-bigint v0.4.8
+   Compiling half v2.7.1
+   Compiling ahash v0.8.12
+   Compiling aho-corasick v1.1.5
+   Compiling regex-syntax v0.8.11
+   Compiling arrow-buffer v58.4.0
+   Compiling regex-automata v0.4.18
+   Compiling ppv-lite86 v0.2.21
+   Compiling uuid v1.26.1
+   Compiling num_cpus v1.17.0
+   Compiling fs2 v0.4.3
+   Compiling itertools v0.10.5
+   Compiling portable-atomic v1.15.0
+   Compiling cfg_aliases v0.2.2
+   Compiling arrow-schema v58.4.0
+   Compiling typenum v1.20.1
+   Compiling crossbeam-epoch v0.9.21
+   Compiling heck v0.4.1
+   Compiling regex v1.13.1
+   Compiling arrow-data v58.4.0
+   Compiling prost-derive v0.11.9
+   Compiling nix v0.31.3
+   Compiling num-complex v0.4.6
+   Compiling arrow-array v58.4.0
+   Compiling crossbeam-channel v0.5.17
+   Compiling rand_core v0.9.5
+   Compiling rustix v0.38.44
+   Compiling winnow v1.0.4
+   Compiling tagptr v0.2.0
+   Compiling moka v0.12.16
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling rand_chacha v0.9.0
+   Compiling chunked-wal v0.2.3
+   Compiling codeq v0.5.2
+   Compiling num-format v0.4.4
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling lexical-util v1.0.7
+   Compiling prettyplease v0.1.25
+   Compiling linux-raw-sys v0.4.15
+   Compiling jiff-core v0.1.1
+   Compiling rustversion v1.0.23
+   Compiling jiff v0.2.37
+   Compiling rotbl v0.2.10
+   Compiling toml_edit v0.25.15+spec-1.1.0
+   Compiling fastrace v0.7.19
+   Compiling ctrlc v3.5.2
+   Compiling raft-log v0.4.6
+   Compiling rand v0.9.5
+   Compiling prost v0.11.9
+   Compiling env_filter v2.0.0
+   Compiling jsonwebtoken v9.3.1
+   Compiling rand_core v0.6.4
+   Compiling fixedbitset v0.4.2
+   Compiling home v0.5.12
+   Compiling which v4.4.2
+   Compiling petgraph v0.6.5
+   Compiling env_logger v0.11.11
+   Compiling databend-base v0.4.0 (https://github.com/databendlabs/databend-base?tag=v0.4.0#04fe7a5d)
+   Compiling databend-meta-types v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/types)
+   Compiling prost-types v0.11.9
+   Compiling proc-macro-crate v3.5.0
+   Compiling arrow-select v58.4.0
+   Compiling generic-array v0.14.7
+   Compiling rustc_version v0.4.1
+   Compiling lazy_static v1.5.0
+   Compiling multimap v0.8.3
+   Compiling match_cfg v0.1.0
+   Compiling parking_lot_core v0.8.6
+   Compiling flatbuffers v25.12.19
+   Compiling hostname v0.3.1
+   Compiling prost-build v0.11.9
+   Compiling strum_macros v0.24.3
+   Compiling structkey-derive v0.1.1
+   Compiling databend-meta-runtime-api v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/common/runtime-api)
+   Compiling lexical-write-integer v1.0.6
+   Compiling lexical-parse-integer v1.0.6
+   Compiling bitmaps v2.1.0
+   Compiling im v15.1.0
+   Compiling rmp v0.8.15
+   Compiling instant v0.1.13
+   Compiling strum v0.24.1
+   Compiling databend-meta-raft-config v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/raft-config)
+   Compiling rmp-serde v1.3.1
+   Compiling sized-chunks v0.6.5
+   Compiling lexical-parse-float v1.0.6
+   Compiling lexical-write-float v1.0.6
+   Compiling prometheus-client v0.22.3
+   Compiling structkey v0.1.1
+   Compiling databend-meta-snapshot-db v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/snapshot-db)
+   Compiling databend-meta-client-types v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/client/types)
+   Compiling rand_xoshiro v0.6.0
+   Compiling paste v1.0.15
+   Compiling databend-meta-kvapi v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/client/kvapi)
+   Compiling databend-meta-leveled-store v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/leveled-store)
+   Compiling lexical-core v1.0.6
+   Compiling databend-meta-raft-log v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/raft-log)
+   Compiling parking_lot v0.11.2
+   Compiling arrow-ord v58.4.0
+   Compiling atoi v2.0.0
+   Compiling prometheus-client-derive-encode v0.4.2
+   Compiling ryu v1.0.23
+   Compiling dtoa v1.0.11
+   Compiling hashbrown v0.14.5
+   Compiling arrow-cast v58.4.0
+   Compiling dashmap v5.5.3
+   Compiling databend-meta-snapshot-store v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/snapshot-store)
+   Compiling sled v0.34.6 (https://github.com/datafuse-extras/sled?tag=v0.34.7-datafuse.1#43fa7250)
+   Compiling arrow-ipc v58.4.0
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling arrow-string v58.4.0
+   Compiling arrow-row v58.4.0
+   Compiling arrow-arith v58.4.0
+   Compiling tempfile v3.27.0
+   Compiling async-backtrace-attributes v0.2.6 (https://github.com/datafuse-extras/async-backtrace.git?rev=dea4553#dea4553c)
+   Compiling rustc-hash v1.1.0
+   Compiling static_assertions v1.1.0
+   Compiling databend-meta-sled-store v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/sled-store)
+   Compiling async-backtrace v0.2.6 (https://github.com/datafuse-extras/async-backtrace.git?rev=dea4553#dea4553c)
+   Compiling arrow-flight v58.4.0
+   Compiling digest v0.10.7
+   Compiling databend-meta-metrics v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/metrics)
+   Compiling databend-meta-kvapi-test-suite v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/client/kvapi-test-suite)
+   Compiling logcall v0.1.13
+   Compiling databend-meta-version v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/common/version)
+   Compiling cpufeatures v0.2.17
+   Compiling fs_extra v1.3.0
+   Compiling span-map v0.2.0
+   Compiling watcher v0.5.0 (https://github.com/databendlabs/watcher?tag=v0.5.0#4508a803)
+   Compiling databend-meta-store-compat v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/store-compat)
+   Compiling databend-meta-client v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/client/client)
+   Compiling sha2 v0.10.9
+   Compiling databend-meta-state-machine v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/state-machine)
+   Compiling tonic-reflection v0.14.6
+   Compiling backon v1.6.0
+   Compiling feature-set v0.1.1
+   Compiling rand_chacha v0.3.1
+   Compiling databend-meta v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/service)
+   Compiling rand v0.8.8
+   Compiling databend-meta-test-harness v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/common/test-harness)
+   Compiling databend-meta-benchmark v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/benchmark)
+    Finished `dev` profile [unoptimized] target(s) in 2m 01s

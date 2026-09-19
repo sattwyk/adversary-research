@@ -1,0 +1,25 @@
+   Compiling databend-meta-raft-log v260629.7.0 (/mnt/c/Users/sattw/Documents/Codex/2026-09-18/you-are-evaluating-a-systems-architecture/work/topology-experiment/sources/databend-meta/crates/server/raft-log)
+error[E0432]: unresolved import `openraft::TypeConfigExt`
+ --> crates/server/raft-log/examples/topology_probe.rs:8:31
+  |
+8 | use openraft::{RaftLogReader, TypeConfigExt, storage::RaftLogStorage};
+  |                               ^^^^^^^^^^^^^ no `TypeConfigExt` in the root
+  |
+  = help: consider importing this trait instead:
+          openraft::type_config::TypeConfigExt
+
+error[E0599]: no function or associated item named `oneshot` found for struct `TypeConfig` in the current scope
+  --> crates/server/raft-log/examples/topology_probe.rs:57:40
+   |
+57 |             let (tx, rx) = TypeConfig::oneshot();
+   |                                        ^^^^^^^ function or associated item not found in `TypeConfig`
+   |
+   = help: items from traits can only be used if the trait is in scope
+help: trait `TypeConfigExt` which provides `oneshot` is implemented but not in scope; perhaps you want to import it
+   |
+ 3 + use openraft::type_config::TypeConfigExt;
+   |
+
+Some errors have detailed explanations: E0432, E0599.
+For more information about an error, try `rustc --explain E0432`.
+error: could not compile `databend-meta-raft-log` (example "topology_probe") due to 2 previous errors

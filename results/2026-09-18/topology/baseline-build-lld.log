@@ -1,0 +1,38 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling serde_core v1.0.229
+   Compiling libc v0.2.189
+error: linking with `clang` failed: exit status: 1
+  |
+  = note:  "clang" "-m64" "/tmp/rustcsg1qxQ/symbols.o" "<5 object files omitted>" "-Wl,--as-needed" "-Wl,-Bstatic" "<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib/{libstd-*,libpanic_unwind-*,libobject-*,libmemchr-*,libaddr2line-*,libgimli-*,libcfg_if-*,librustc_demangle-*,libstd_detect-*,libhashbrown-*,librustc_std_workspace_alloc-*,libminiz_oxide-*,libadler2-*,libunwind-*,liblibc-*,librustc_std_workspace_core-*,liballoc-*,libcore-*,libcompiler_builtins-*}.rlib" "-Wl,-Bdynamic" "-lgcc_s" "-lutil" "-lrt" "-lpthread" "-lm" "-ldl" "-lc" "-L" "/tmp/rustcsg1qxQ/raw-dylibs" "-Wl,--eh-frame-hdr" "-Wl,-z,noexecstack" "-L" "<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib" "-o" "/tmp/adversary-topology-20260918/work/target/debug/build/libc-d3cf3921886a7c89/build_script_build-d3cf3921886a7c89" "-Wl,--gc-sections" "-pie" "-Wl,-z,relro,-z,now" "-Wl,--strip-debug" "-nodefaultlibs" "-Wl,-rpath,$ORIGIN/../../../../../../..<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib,--enable-new-dtags,-z,origin" "-fuse-ld=lld"
+  = note: some arguments are omitted. use `--verbose` to show all linker arguments
+  = note: clang: error: invalid linker name in argument '-fuse-ld=lld'
+          
+
+error: linking with `clang` failed: exit status: 1
+  |
+  = note:  "clang" "-m64" "/tmp/rustcuTd2eB/symbols.o" "<3 object files omitted>" "-Wl,--as-needed" "-Wl,-Bstatic" "<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib/{libstd-*,libpanic_unwind-*,libobject-*,libmemchr-*,libaddr2line-*,libgimli-*,libcfg_if-*,librustc_demangle-*,libstd_detect-*,libhashbrown-*,librustc_std_workspace_alloc-*,libminiz_oxide-*,libadler2-*,libunwind-*,liblibc-*,librustc_std_workspace_core-*,liballoc-*,libcore-*,libcompiler_builtins-*}.rlib" "-Wl,-Bdynamic" "-lgcc_s" "-lutil" "-lrt" "-lpthread" "-lm" "-ldl" "-lc" "-L" "/tmp/rustcuTd2eB/raw-dylibs" "-Wl,--eh-frame-hdr" "-Wl,-z,noexecstack" "-L" "<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib" "-o" "/tmp/adversary-topology-20260918/work/target/debug/build/proc-macro2-569498cc4880ffdd/build_script_build-569498cc4880ffdd" "-Wl,--gc-sections" "-pie" "-Wl,-z,relro,-z,now" "-Wl,--strip-debug" "-nodefaultlibs" "-Wl,-rpath,$ORIGIN/../../../../../../..<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib,--enable-new-dtags,-z,origin" "-fuse-ld=lld"
+  = note: some arguments are omitted. use `--verbose` to show all linker arguments
+  = note: clang: error: invalid linker name in argument '-fuse-ld=lld'
+          
+
+error: linking with `clang` failed: exit status: 1
+  |
+  = note:  "clang" "-m64" "/tmp/rustckcG7Uy/symbols.o" "<3 object files omitted>" "-Wl,--as-needed" "-Wl,-Bstatic" "<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib/{libstd-*,libpanic_unwind-*,libobject-*,libmemchr-*,libaddr2line-*,libgimli-*,libcfg_if-*,librustc_demangle-*,libstd_detect-*,libhashbrown-*,librustc_std_workspace_alloc-*,libminiz_oxide-*,libadler2-*,libunwind-*,liblibc-*,librustc_std_workspace_core-*,liballoc-*,libcore-*,libcompiler_builtins-*}.rlib" "-Wl,-Bdynamic" "-lgcc_s" "-lutil" "-lrt" "-lpthread" "-lm" "-ldl" "-lc" "-L" "/tmp/rustckcG7Uy/raw-dylibs" "-Wl,--eh-frame-hdr" "-Wl,-z,noexecstack" "-L" "<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib" "-o" "/tmp/adversary-topology-20260918/work/target/debug/build/serde_core-f605bff3bbf50701/build_script_build-f605bff3bbf50701" "-Wl,--gc-sections" "-pie" "-Wl,-z,relro,-z,now" "-Wl,--strip-debug" "-nodefaultlibs" "-Wl,-rpath,$ORIGIN/../../../../../../..<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib,--enable-new-dtags,-z,origin" "-fuse-ld=lld"
+  = note: some arguments are omitted. use `--verbose` to show all linker arguments
+  = note: clang: error: invalid linker name in argument '-fuse-ld=lld'
+          
+
+error: linking with `clang` failed: exit status: 1
+  |
+  = note:  "clang" "-m64" "/tmp/rustcUsD66G/symbols.o" "<2 object files omitted>" "-Wl,--as-needed" "-Wl,-Bstatic" "<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib/{libstd-*,libpanic_unwind-*,libobject-*,libmemchr-*,libaddr2line-*,libgimli-*,libcfg_if-*,librustc_demangle-*,libstd_detect-*,libhashbrown-*,librustc_std_workspace_alloc-*,libminiz_oxide-*,libadler2-*,libunwind-*,liblibc-*,librustc_std_workspace_core-*,liballoc-*,libcore-*,libcompiler_builtins-*}.rlib" "-Wl,-Bdynamic" "-lgcc_s" "-lutil" "-lrt" "-lpthread" "-lm" "-ldl" "-lc" "-L" "/tmp/rustcUsD66G/raw-dylibs" "-Wl,--eh-frame-hdr" "-Wl,-z,noexecstack" "-L" "<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib" "-o" "/tmp/adversary-topology-20260918/work/target/debug/build/quote-4384b2d8d3e481c0/build_script_build-4384b2d8d3e481c0" "-Wl,--gc-sections" "-pie" "-Wl,-z,relro,-z,now" "-Wl,--strip-debug" "-nodefaultlibs" "-Wl,-rpath,$ORIGIN/../../../../../../..<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib,--enable-new-dtags,-z,origin" "-fuse-ld=lld"
+  = note: some arguments are omitted. use `--verbose` to show all linker arguments
+  = note: clang: error: invalid linker name in argument '-fuse-ld=lld'
+          
+
+error: could not compile `quote` (build script) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `serde_core` (build script) due to 1 previous error
+error: could not compile `proc-macro2` (build script) due to 1 previous error
+error: could not compile `libc` (build script) due to 1 previous error

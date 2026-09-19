@@ -1,0 +1,19 @@
+PASS kill=false persist_prefix=false: 101 identical traces
+PASS kill=false persist_prefix=true: 101 identical traces
+PASS kill=true persist_prefix=false: 101 identical traces
+PASS kill=true persist_prefix=true: 101 identical traces
+  submit n0 r0 Write { offset: 0, length: 7 }
+  submit n1 r1 Write { offset: 0, length: 7 }
+  effect r0 bytes=3
+  spontaneous persistence n0 prefix3
+  kill n0 while import pending
+  power loss n0 discards volatile state
+  effect r1 bytes=7
+  ready r1 7
+  return r1 7
+  submit n1 r2 Sync
+  effect r2 bytes=0
+  ready r2 0
+  return r2 0
+  published n1 123463
+Mechanism probe only: nested synchronous component calls, two stores, short writes, separate effect/persistence/completion, drop during import, host cleanup. No production port or performance claim.

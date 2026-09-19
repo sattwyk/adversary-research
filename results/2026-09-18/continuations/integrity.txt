@@ -1,0 +1,15 @@
+redb 4.1.0 registry archive SHA256 matches Cargo.lock: 8e925444704b5f17d32bf42f5b6e2df050bceebc3dcd6e71cc73dafe8092e839
+Compared 71 packaged files against compiled registry sources: zero mismatches.
+rustc 1.97.1 (8bab26f4f 2026-07-14)
+binary: rustc
+commit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452
+commit-date: 2026-07-14
+host: x86_64-pc-windows-msvc
+release: 1.97.1
+LLVM version: 22.1.6
+
+Algorithm : SHA256
+Hash      : D1588F6AAAC29021D6BF7A8E9BBD01EEC641EACD51BC30F54D00105CA55336BF
+Path      : C:\Users\sattw\Documents\Codex\2026-09-18\you-are-evaluating-a-systems-architecture\work\redb-guest\target\wasm32-unknown-unknown\release\redb_guest.wasm
+
+

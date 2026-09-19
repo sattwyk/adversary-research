@@ -1,0 +1,12 @@
+[package]
+name = "continuation-probe"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+wasmtime = { version = "=48.0.2", default-features = false, features = ["cranelift", "runtime", "std", "async", "component-model", "wat"] }
+anyhow = "1"
+corosensei = "=0.3.4"
+
+[profile.dev]
+debug = 0

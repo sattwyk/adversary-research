@@ -1,0 +1,4 @@
+component	commit	source
+databend-meta	4b7bba5c37864441fb451e65bc6ec9a91fb852e7	https://github.com/databendlabs/databend-meta.git
+raft-log	55a42ae254b984532204a8787646e78471ddd8f4	https://github.com/drmingdrmer/raft-log.git
+chunked-wal	6014c3f1ba601e855e2f50cef91e923a884384fe	https://github.com/drmingdrmer/chunked-wal.git

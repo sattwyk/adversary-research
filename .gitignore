@@ -1,0 +1,8 @@
+**/target/
+/.work/
+/results/current/
+.env
+.env.*
+*.swp
+.DS_Store
+Thumbs.db
