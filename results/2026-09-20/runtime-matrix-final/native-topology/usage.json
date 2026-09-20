@@ -1,0 +1,8 @@
+{
+  "wall_seconds": 1.5229652850539424,
+  "user_cpu_seconds": 1.419817,
+  "system_cpu_seconds": 0.051557,
+  "peak_rss_kib": 35004,
+  "exit_code": 0,
+  "external_timeout": false
+}

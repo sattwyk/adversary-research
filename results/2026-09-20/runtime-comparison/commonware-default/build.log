@@ -1,0 +1,6 @@
+error: rustc 1.94.0-nightly is not supported by the following package:
+  sysinfo@0.39.6 requires rustc 1.95
+Either upgrade rustc or select compatible dependency versions with
+`cargo update <name>@<current-ver> --precise <compatible-ver>`
+where `<compatible-ver>` is the latest version supporting rustc 1.94.0-nightly
+

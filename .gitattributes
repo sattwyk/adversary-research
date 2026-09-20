@@ -2,3 +2,6 @@
 *.zip -text
 *.crate -text
 *.gz -text
+# Unified patches need a space on blank context lines; raw logs retain tool output.
+*.patch -whitespace
+results/**/*.log -whitespace

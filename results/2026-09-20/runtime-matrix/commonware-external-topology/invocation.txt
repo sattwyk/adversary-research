@@ -1,0 +1,6 @@
+backend=commonware-external
+toolchain=nightly
+rustflags=-C linker=cc
+trials=10
+scenario=topology
+allow_system_thread=1

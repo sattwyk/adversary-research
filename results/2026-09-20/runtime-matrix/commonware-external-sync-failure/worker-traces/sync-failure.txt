@@ -1,0 +1,17 @@
+BeforeSend { seq: 1, kind: Write, bytes: 50, sync: true }
+AfterReserve { seq: 1 }
+AfterSend { seq: 1, accepted: true }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(1) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 1, bytes: 50 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 68, files: 1 }
+AfterSync { upto_offset: 68, succeeded: false }
+BeforeRequestCallback { upto_offset: 68 }
+AfterRequestCallback { upto_offset: 68 }
+WorkerStopped { succeeded: false }
+BeforeSend { seq: 2, kind: Write, bytes: 50, sync: true }
+AfterReserve { seq: 2 }
+AfterSend { seq: 2, accepted: false }

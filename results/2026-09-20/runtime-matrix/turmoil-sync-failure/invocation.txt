@@ -1,0 +1,6 @@
+backend=turmoil
+toolchain=nightly-2025-12-11
+rustflags=-C linker=cc
+trials=10
+scenario=sync-failure
+allow_system_thread=1

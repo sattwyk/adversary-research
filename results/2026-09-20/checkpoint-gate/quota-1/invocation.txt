@@ -1,0 +1,6 @@
+backend=native
+toolchain=nightly-2025-12-11
+rustflags=-C linker=cc
+trials=1
+scenario=topology
+allow_system_thread=0

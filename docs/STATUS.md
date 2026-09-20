@@ -1,5 +1,19 @@
 # Evidence status — 20 September 2026
 
+## Matched runtime and concurrency results
+
+See the [runtime comparison evidence ledger](research/runtime-comparison-progress.md).
+Native, Turmoil, Commonware external mode and MadSim with native-thread opt-in now
+pass 40 matched recovery trials with identical exported worker traces. Each host
+also propagates the same injected vote-sync failure. The controller retains ownership
+of worker scheduling; these results establish hosting, not a fully simulated cluster.
+
+Shuttle reproduces the historical shared-file-cursor race with one targeted checkpoint
+and replays it 10/10 times. The fixed reader passes all 63 explored schedules. A separate
+negative test shows the current four-request controller gate can deadlock a valid client.
+Matched historical corpus runs, overhead measurements and comparative exploration/diagnosis
+remain unfinished. No separate runtime advantage has been demonstrated.
+
 ## New topology evidence
 
 See the [complete current-results report](research/topology-experiment-results.md) for scope, source-change counts, historical commit links and the 16-question assessment.
@@ -32,7 +46,7 @@ The continuation probes also ran previously on Windows. Separate successful Linu
 ## Still unfinished or untested
 
 - Full Databend multi-node deterministic integration preserving the actual worker topology.
-- Matched implementations in Commonware, Turmoil, MadSim, native fibers and suspended Wasm.
+- Full distributed-runtime comparisons beyond the completed storage-slice hosting matrix.
 - Broader historical bug rediscovery through the distributed target and an independently labeled mutant corpus.
 - Qualified filesystem/device power-loss correspondence.
 - Comparative exploration throughput and diagnostic effectiveness.

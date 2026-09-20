@@ -1,0 +1,35 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index adf11a1..71dcafb 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -24,6 +24,7 @@ thiserror = { version = "1.0.64" }
+ 
+ 
+ [dev-dependencies]
++shuttle = "=0.9.3"
+ goldenfile = { version = "1.8.0" }
+ indoc = "2"
+ pretty_assertions = "1.4.1"
+diff --git a/src/chunk/mod.rs b/src/chunk/mod.rs
+index 5320193..71fe05c 100644
+--- a/src/chunk/mod.rs
++++ b/src/chunk/mod.rs
+@@ -361,6 +361,8 @@ where T: Types
+             segment.offset().0 - self.global_start(),
+         ))?;
+ 
++        #[cfg(test)]
++        crate::tests::reader_boundary::checkpoint();
+         let br = io::BufReader::with_capacity(16 * 1024, f);
+ 
+         WALRecord::<T>::decode(br).context(|| {
+diff --git a/src/tests/mod.rs b/src/tests/mod.rs
+index 632d7f0..350a36a 100644
+--- a/src/tests/mod.rs
++++ b/src/tests/mod.rs
+@@ -2,3 +2,5 @@ pub(crate) mod context;
+ pub(crate) mod sample_data;
+ pub(crate) mod test_raft_log;
+ pub(crate) mod test_reopen;
++
++pub(crate) mod reader_boundary;

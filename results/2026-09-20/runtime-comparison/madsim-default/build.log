@@ -1,0 +1,39 @@
+ Downloading crates ...
+  Downloaded async-stream-impl v0.3.6
+  Downloaded darling_macro v0.14.4
+  Downloaded panic-message v0.3.0
+  Downloaded downcast-rs v1.2.1
+  Downloaded event-listener-strategy v0.5.4
+  Downloaded strsim v0.10.0
+  Downloaded madsim-macros v0.2.12
+  Downloaded event-listener v5.4.2
+  Downloaded naive-timer v0.2.0
+  Downloaded async-channel v2.5.0
+  Downloaded darling v0.14.4
+  Downloaded bincode v1.3.3
+  Downloaded async-stream v0.3.6
+  Downloaded spin v0.9.9
+  Downloaded darling_core v0.14.4
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling serde_core v1.0.229
+   Compiling syn v3.0.6
+   Compiling syn v2.0.119
+rustc-LLVM ERROR: IO failure on output stream: No space left on device
+error: could not compile `syn` (lib)
+
+Caused by:
+  No space left on device (os error 28)
+
+Caused by:
+  failed to parse process output: `/home/satty/.rustup/toolchains/nightly-2025-12-11-x86_64-unknown-linux-gnu/bin/rustc --crate-name syn --edition=2021 /home/satty/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.119/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no --cfg 'feature="clone-impls"' --cfg 'feature="default"' --cfg 'feature="derive"' --cfg 'feature="extra-traits"' --cfg 'feature="full"' --cfg 'feature="parsing"' --cfg 'feature="printing"' --cfg 'feature="proc-macro"' --cfg 'feature="visit"' --cfg 'feature="visit-mut"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("clone-impls", "default", "derive", "extra-traits", "fold", "full", "parsing", "printing", "proc-macro", "test", "visit", "visit-mut"))' -C metadata=13a2184d1d42975a -C extra-filename=-7135fd8a15cb1863 --out-dir /tmp/adversary-topology-20260918/work/target/debug/deps -C linker=clang -C strip=debuginfo -L dependency=/tmp/adversary-topology-20260918/work/target/debug/deps --extern proc_macro2=/tmp/adversary-topology-20260918/work/target/debug/deps/libproc_macro2-08acf4341d8b0f1c.rmeta --extern quote=/tmp/adversary-topology-20260918/work/target/debug/deps/libquote-5568bb00dc9178af.rmeta --extern unicode_ident=/tmp/adversary-topology-20260918/work/target/debug/deps/libunicode_ident-728a3e232de4ad3e.rmeta --cap-lints allow -C linker=cc --cfg madsim` (exit status: 101)
+warning: build failed, waiting for other jobs to finish...
+rustc-LLVM ERROR: IO failure on output stream: No space left on device
+error: could not compile `syn` (lib)
+
+Caused by:
+  No space left on device (os error 28)
+
+Caused by:
+  failed to parse process output: `/home/satty/.rustup/toolchains/nightly-2025-12-11-x86_64-unknown-linux-gnu/bin/rustc --crate-name syn --edition=2021 /home/satty/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-3.0.6/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no --cfg 'feature="clone-impls"' --cfg 'feature="default"' --cfg 'feature="derive"' --cfg 'feature="extra-traits"' --cfg 'feature="full"' --cfg 'feature="parsing"' --cfg 'feature="printing"' --cfg 'feature="proc-macro"' --cfg 'feature="visit-mut"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("clone-impls", "default", "derive", "extra-traits", "fold", "full", "parsing", "printing", "proc-macro", "test", "visit", "visit-mut"))' -C metadata=f06d65c21f186aa0 -C extra-filename=-c01c5945944c49b9 --out-dir /tmp/adversary-topology-20260918/work/target/debug/deps -C linker=clang -C strip=debuginfo -L dependency=/tmp/adversary-topology-20260918/work/target/debug/deps --extern proc_macro2=/tmp/adversary-topology-20260918/work/target/debug/deps/libproc_macro2-08acf4341d8b0f1c.rmeta --extern quote=/tmp/adversary-topology-20260918/work/target/debug/deps/libquote-5568bb00dc9178af.rmeta --extern unicode_ident=/tmp/adversary-topology-20260918/work/target/debug/deps/libunicode_ident-728a3e232de4ad3e.rmeta --cap-lints allow -C linker=cc --cfg madsim` (exit status: 101)

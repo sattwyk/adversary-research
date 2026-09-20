@@ -1,0 +1,5 @@
+backend=madsim
+toolchain=nightly-2025-12-11
+rustflags=-C linker=cc --cfg madsim
+trials=10
+scenario=topology

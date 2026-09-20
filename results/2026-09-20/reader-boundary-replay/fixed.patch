@@ -1,0 +1,35 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index adf11a1..71dcafb 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -24,6 +24,7 @@ thiserror = { version = "1.0.64" }
+ 
+ 
+ [dev-dependencies]
++shuttle = "=0.9.3"
+ goldenfile = { version = "1.8.0" }
+ indoc = "2"
+ pretty_assertions = "1.4.1"
+diff --git a/src/chunk/mod.rs b/src/chunk/mod.rs
+index 98a2cf5..8909b28 100644
+--- a/src/chunk/mod.rs
++++ b/src/chunk/mod.rs
+@@ -366,6 +366,8 @@ where T: Types
+         let size = *segment.size() as usize;
+ 
+         let mut buf = vec![0u8; size];
++        #[cfg(test)]
++        crate::tests::reader_boundary::checkpoint();
+         self.f.read_exact_at(&mut buf, offset)?;
+ 
+         WALRecord::<T>::decode(&buf[..]).context(|| {
+diff --git a/src/tests/mod.rs b/src/tests/mod.rs
+index 11bc97a..64485c6 100644
+--- a/src/tests/mod.rs
++++ b/src/tests/mod.rs
+@@ -3,3 +3,5 @@ pub(crate) mod sample_data;
+ pub(crate) mod test_concurrent_read;
+ pub(crate) mod test_raft_log;
+ pub(crate) mod test_reopen;
++
++pub(crate) mod reader_boundary;

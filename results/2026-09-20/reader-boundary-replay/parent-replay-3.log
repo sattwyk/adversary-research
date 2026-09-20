@@ -1,0 +1,34 @@
+
+running 1 test
+READER {"execution":0,"level":2,"valid":[false, false]}
+READER_SUMMARY {"level":2,"executions":1,"found":true}
+test tests::reader_boundary::adversary_reader_boundary ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 49 filtered out; finished in 0.00s
+
+    Finished `test` profile [unoptimized] target(s) in 0.08s
+     Running unittests src/lib.rs (/tmp/adversary-reader-target/debug/deps/raft_log-24de329f183bb65b)
+Task failed, serializing schedule
+test panicked in task 'task-1'
+failing schedule:
+"
+910208f8acd19101002452
+"
+pass that string to `shuttle::replay` to replay the failure
+
+thread 'tests::reader_boundary::adversary_reader_boundary' (52107) panicked at src/raft_log/wal/mod.rs:273:13:
+assertion `left == right` failed
+  left: (1, 1)
+ right: (1, 0)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Task failed, serializing schedule
+test panicked in task 'main-thread'
+failing schedule:
+"
+91020bf8acd191010024522000
+"
+pass that string to `shuttle::replay` to replay the failure
+
+thread 'tests::reader_boundary::adversary_reader_boundary' (52107) panicked at src/tests/reader_boundary.rs:63:13:
+historical shared-cursor race
+test panicked in task 'main-thread'

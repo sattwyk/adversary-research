@@ -1,0 +1,72 @@
+[
+  {
+    "trial": 0,
+    "wall_including_cargo_seconds": 0.1832452949602157,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 1,
+    "wall_including_cargo_seconds": 0.1147810589754954,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 2,
+    "wall_including_cargo_seconds": 0.10633995500393212,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 3,
+    "wall_including_cargo_seconds": 0.11636176100000739,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 4,
+    "wall_including_cargo_seconds": 0.11209775798488408,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 5,
+    "wall_including_cargo_seconds": 0.10886525601381436,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 6,
+    "wall_including_cargo_seconds": 0.10592525498941541,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 7,
+    "wall_including_cargo_seconds": 0.10772745596477762,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 8,
+    "wall_including_cargo_seconds": 0.13058376696426421,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  },
+  {
+    "trial": 9,
+    "wall_including_cargo_seconds": 0.10305175394751132,
+    "level": 2,
+    "executions": 1,
+    "found": true
+  }
+]

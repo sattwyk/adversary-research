@@ -1,0 +1,15 @@
+{
+  "experiments/runtime-comparison/reader_boundary.rs": 92,
+  "experiments/runtime-comparison/runtime_probe.rs": 52,
+  "experiments/runtime-comparison/shared.rs": 241,
+  "experiments/runtime-comparison/sync_failure.rs": 98,
+  "scripts/measure-process.py": 35,
+  "scripts/prepare-reader-boundary.py": 24,
+  "scripts/replay-reader-boundary.py": 31,
+  "scripts/verify-runtime-matrix.py": 43,
+  "scripts/run-runtime-comparison.sh": 65,
+  "scripts/run-runtime-matrix.sh": 16,
+  "scripts/run-reader-boundary.sh": 30,
+  "scripts/prepare-runtime-comparison.sh": 9,
+  "scripts/attack-checkpoint-gate.sh": 15
+}

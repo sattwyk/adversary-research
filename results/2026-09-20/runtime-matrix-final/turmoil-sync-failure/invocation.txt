@@ -1,0 +1,9 @@
+backend=turmoil
+toolchain=nightly-2025-12-11
+rustflags=-C linker=cc
+trials=10
+scenario=sync-failure
+allow_system_thread=1
+serial_client=0
+batch_items=4
+process_timeout=60

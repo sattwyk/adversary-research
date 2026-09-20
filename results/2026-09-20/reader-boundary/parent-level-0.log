@@ -1,0 +1,123 @@
+    Updating crates.io index
+     Locking 136 packages to latest Rust 1.94.0-nightly compatible versions
+      Adding codeq v0.5.2 (available: v0.6.2)
+      Adding rand v0.9.5 (available: v0.10.3)
+      Adding thiserror v1.0.69 (available: v2.0.20)
+ Downloading crates ...
+  Downloaded tap v1.0.1
+  Downloaded rand_pcg v0.3.1
+  Downloaded assoc v0.1.3
+  Downloaded funty v2.0.0
+  Downloaded wyz v0.5.1
+  Downloaded radium v0.7.0
+  Downloaded owo-colors v4.4.0
+  Downloaded bitvec v1.1.1
+  Downloaded shuttle-schedulers v0.1.1
+  Downloaded const-siphasher v1.0.2
+  Downloaded shuttle-engine v0.1.1
+  Downloaded shuttle-std v0.1.1
+   Compiling libc v0.2.189
+   Compiling cfg-if v1.0.5
+   Compiling proc-macro2 v1.0.107
+   Compiling autocfg v1.5.1
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling zerocopy v0.8.57
+   Compiling siphasher v1.0.3
+   Compiling once_cell v1.21.4
+   Compiling phf_shared v0.11.3
+   Compiling getrandom v0.2.17
+   Compiling regex-syntax v0.8.11
+   Compiling serde_core v1.0.229
+   Compiling rand_core v0.6.4
+   Compiling rand v0.8.8
+   Compiling regex-automata v0.4.18
+   Compiling ppv-lite86 v0.2.21
+   Compiling syn v3.0.6
+   Compiling num-traits v0.2.19
+   Compiling unicode-segmentation v1.13.3
+   Compiling serde v1.0.229
+   Compiling radium v0.7.0
+   Compiling serde_derive v1.0.229
+   Compiling regex v1.13.1
+   Compiling phf_generator v0.11.3
+   Compiling corosensei v0.3.4
+   Compiling scopeguard v1.2.0
+   Compiling tap v1.0.1
+   Compiling wyz v0.5.1
+   Compiling phf_codegen v0.11.3
+   Compiling parse-zoneinfo v0.3.1
+   Compiling rand_chacha v0.3.1
+   Compiling phf v0.11.3
+   Compiling tracing-core v0.1.36
+   Compiling syn v2.0.119
+   Compiling pin-project-lite v0.2.17
+   Compiling funty v2.0.0
+   Compiling getrandom v0.3.4
+   Compiling bitvec v1.1.1
+   Compiling tracing v0.1.44
+   Compiling chrono-tz-build v0.2.1
+   Compiling rand_pcg v0.3.1
+   Compiling assoc v0.1.3
+   Compiling owo-colors v4.4.0
+   Compiling rustix v1.1.5
+   Compiling getrandom v0.4.3
+   Compiling hex v0.4.3
+   Compiling const-siphasher v1.0.2
+   Compiling smallvec v1.16.1
+   Compiling scoped-tls v1.0.1
+   Compiling chrono-tz v0.8.6
+   Compiling shuttle-engine v0.1.1
+   Compiling convert_case v0.6.0
+   Compiling crc32fast v1.5.2
+   Compiling unicode-xid v0.2.6
+   Compiling bitflags v2.13.2
+   Compiling iana-time-zone v0.1.65
+   Compiling linux-raw-sys v0.12.1
+   Compiling anyhow v1.0.104
+   Compiling chrono v0.4.45
+   Compiling derive_more-impl v1.0.0
+   Compiling rand_core v0.9.5
+   Compiling similar v2.7.0
+   Compiling console v0.15.11
+   Compiling yansi v1.0.1
+   Compiling fastrand v2.5.0
+   Compiling thiserror v1.0.69
+   Compiling tempfile v3.27.0
+   Compiling similar-asserts v1.7.0
+   Compiling derive_more v1.0.0
+   Compiling rand_chacha v0.9.0
+   Compiling shuttle-schedulers v0.1.1
+   Compiling shuttle-std v0.1.1
+   Compiling thiserror-impl v1.0.69
+   Compiling rmp v0.8.15
+   Compiling diff v0.1.13
+   Compiling byteorder v1.5.0
+   Compiling static_assertions v1.1.0
+   Compiling goldenfile v1.11.0
+   Compiling codeq v0.5.2
+   Compiling pretty_assertions v1.4.1
+   Compiling rmp-serde v1.3.1
+   Compiling display-more v0.2.6
+   Compiling shuttle v0.9.3
+   Compiling rand v0.9.5
+   Compiling fs2 v0.4.3
+   Compiling log v0.4.34
+   Compiling indoc v2.0.7
+   Compiling raft-log v0.2.12 (/tmp/adversary-reader.PEHv9s-parent)
+error[E0603]: module `reader_boundary` is private
+   --> src/chunk/mod.rs:365:23
+    |
+365 |         crate::tests::reader_boundary::checkpoint();
+    |                       ^^^^^^^^^^^^^^^  ---------- function `checkpoint` is not publicly re-exported
+    |                       |
+    |                       private module
+    |
+note: the module `reader_boundary` is defined here
+   --> src/tests/mod.rs:6:1
+    |
+  6 | mod reader_boundary;
+    | ^^^^^^^^^^^^^^^^^^^^
+
+For more information about this error, try `rustc --explain E0603`.
+error: could not compile `raft-log` (lib test) due to 1 previous error

@@ -1,0 +1,14 @@
+diff --git a/crates/server/raft-log/Cargo.toml b/crates/server/raft-log/Cargo.toml
+--- a/crates/server/raft-log/Cargo.toml
++++ b/crates/server/raft-log/Cargo.toml
+@@ -8,6 +8,10 @@
+ publish = { workspace = true }
+ edition = { workspace = true }
+ 
++[features]
++adversary-turmoil = ["dep:turmoil"]
++
+ [dependencies]
++turmoil = { version = "=0.7.2", optional = true }
+ anyerror = { workspace = true }
+ databend-meta-types = { workspace = true }

@@ -1,0 +1,514 @@
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(1) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(2) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(3) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(4) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16936 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 16954, files: 1 }
+BeforePersistedCallback { upto_offset: 16954 }
+AfterPersistedCallback { upto_offset: 16954 }
+AfterSync { upto_offset: 16954, succeeded: true }
+BeforeRequestCallback { upto_offset: 4252 }
+AfterRequestCallback { upto_offset: 4252 }
+BeforeRequestCallback { upto_offset: 8486 }
+AfterRequestCallback { upto_offset: 8486 }
+BeforeRequestCallback { upto_offset: 12720 }
+AfterRequestCallback { upto_offset: 12720 }
+BeforeRequestCallback { upto_offset: 16954 }
+AfterRequestCallback { upto_offset: 16954 }
+BeforeComplete { seq: 4 }
+AfterComplete { seq: 4 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(5) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(6) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(7) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(8) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16936 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 33890, files: 1 }
+BeforePersistedCallback { upto_offset: 33890 }
+AfterPersistedCallback { upto_offset: 33890 }
+AfterSync { upto_offset: 33890, succeeded: true }
+BeforeRequestCallback { upto_offset: 21188 }
+AfterRequestCallback { upto_offset: 21188 }
+BeforeRequestCallback { upto_offset: 25422 }
+AfterRequestCallback { upto_offset: 25422 }
+BeforeRequestCallback { upto_offset: 29656 }
+AfterRequestCallback { upto_offset: 29656 }
+BeforeRequestCallback { upto_offset: 33890 }
+AfterRequestCallback { upto_offset: 33890 }
+BeforeComplete { seq: 8 }
+AfterComplete { seq: 8 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(9) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(10) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(11) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(12) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16938 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 50828, files: 1 }
+BeforePersistedCallback { upto_offset: 50828 }
+AfterPersistedCallback { upto_offset: 50828 }
+AfterSync { upto_offset: 50828, succeeded: true }
+BeforeRequestCallback { upto_offset: 38124 }
+AfterRequestCallback { upto_offset: 38124 }
+BeforeRequestCallback { upto_offset: 42358 }
+AfterRequestCallback { upto_offset: 42358 }
+BeforeRequestCallback { upto_offset: 46593 }
+AfterRequestCallback { upto_offset: 46593 }
+BeforeRequestCallback { upto_offset: 50828 }
+AfterRequestCallback { upto_offset: 50828 }
+BeforeComplete { seq: 12 }
+AfterComplete { seq: 12 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(13) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(14) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(15) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(16) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 67768, files: 1 }
+BeforePersistedCallback { upto_offset: 67768 }
+AfterPersistedCallback { upto_offset: 67768 }
+AfterSync { upto_offset: 67768, succeeded: true }
+BeforeRequestCallback { upto_offset: 55063 }
+AfterRequestCallback { upto_offset: 55063 }
+BeforeRequestCallback { upto_offset: 59298 }
+AfterRequestCallback { upto_offset: 59298 }
+BeforeRequestCallback { upto_offset: 63533 }
+AfterRequestCallback { upto_offset: 63533 }
+BeforeComplete { seq: 16 }
+AfterComplete { seq: 16 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(17) }
+BeforeNonWrite { kind: AppendFile }
+AfterNonWrite { kind: AppendFile, succeeded: true }
+BeforeComplete { seq: 17 }
+AfterComplete { seq: 17 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(18) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(19) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(20) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(21) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 8522 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 76290, files: 2 }
+BeforePersistedCallback { upto_offset: 76290 }
+AfterPersistedCallback { upto_offset: 76290 }
+AfterSync { upto_offset: 76290, succeeded: true }
+BeforeRequestCallback { upto_offset: 67820 }
+AfterRequestCallback { upto_offset: 67820 }
+BeforeRequestCallback { upto_offset: 72055 }
+AfterRequestCallback { upto_offset: 72055 }
+BeforeRequestCallback { upto_offset: 76290 }
+AfterRequestCallback { upto_offset: 76290 }
+BeforeComplete { seq: 21 }
+AfterComplete { seq: 21 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(22) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(23) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(24) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(25) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 93230, files: 1 }
+BeforePersistedCallback { upto_offset: 93230 }
+AfterPersistedCallback { upto_offset: 93230 }
+AfterSync { upto_offset: 93230, succeeded: true }
+BeforeRequestCallback { upto_offset: 80525 }
+AfterRequestCallback { upto_offset: 80525 }
+BeforeRequestCallback { upto_offset: 84760 }
+AfterRequestCallback { upto_offset: 84760 }
+BeforeRequestCallback { upto_offset: 88995 }
+AfterRequestCallback { upto_offset: 88995 }
+BeforeRequestCallback { upto_offset: 93230 }
+AfterRequestCallback { upto_offset: 93230 }
+BeforeComplete { seq: 25 }
+AfterComplete { seq: 25 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(26) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(27) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(28) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(29) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 110170, files: 1 }
+BeforePersistedCallback { upto_offset: 110170 }
+AfterPersistedCallback { upto_offset: 110170 }
+AfterSync { upto_offset: 110170, succeeded: true }
+BeforeRequestCallback { upto_offset: 97465 }
+AfterRequestCallback { upto_offset: 97465 }
+BeforeRequestCallback { upto_offset: 101700 }
+AfterRequestCallback { upto_offset: 101700 }
+BeforeRequestCallback { upto_offset: 105935 }
+AfterRequestCallback { upto_offset: 105935 }
+BeforeRequestCallback { upto_offset: 110170 }
+AfterRequestCallback { upto_offset: 110170 }
+BeforeComplete { seq: 29 }
+AfterComplete { seq: 29 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(30) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(31) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(32) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(33) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 127110, files: 1 }
+BeforePersistedCallback { upto_offset: 127110 }
+AfterPersistedCallback { upto_offset: 127110 }
+AfterSync { upto_offset: 127110, succeeded: true }
+BeforeRequestCallback { upto_offset: 114405 }
+AfterRequestCallback { upto_offset: 114405 }
+BeforeRequestCallback { upto_offset: 118640 }
+AfterRequestCallback { upto_offset: 118640 }
+BeforeRequestCallback { upto_offset: 122875 }
+AfterRequestCallback { upto_offset: 122875 }
+BeforeRequestCallback { upto_offset: 127110 }
+AfterRequestCallback { upto_offset: 127110 }
+BeforeComplete { seq: 33 }
+AfterComplete { seq: 33 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(34) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(35) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(36) }
+BeforeWrite { items: 2, bytes: 8470 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 135580, files: 1 }
+BeforePersistedCallback { upto_offset: 135580 }
+AfterPersistedCallback { upto_offset: 135580 }
+AfterSync { upto_offset: 135580, succeeded: true }
+BeforeRequestCallback { upto_offset: 131345 }
+AfterRequestCallback { upto_offset: 131345 }
+BeforeNonWrite { kind: AppendFile }
+AfterNonWrite { kind: AppendFile, succeeded: true }
+BeforeComplete { seq: 36 }
+AfterComplete { seq: 36 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(37) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(38) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(39) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(40) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 8522 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 144102, files: 2 }
+BeforePersistedCallback { upto_offset: 144102 }
+AfterPersistedCallback { upto_offset: 144102 }
+AfterSync { upto_offset: 144102, succeeded: true }
+BeforeRequestCallback { upto_offset: 135632 }
+AfterRequestCallback { upto_offset: 135632 }
+BeforeRequestCallback { upto_offset: 139867 }
+AfterRequestCallback { upto_offset: 139867 }
+BeforeRequestCallback { upto_offset: 144102 }
+AfterRequestCallback { upto_offset: 144102 }
+BeforeComplete { seq: 40 }
+AfterComplete { seq: 40 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(41) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(42) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(43) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(44) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 161042, files: 1 }
+BeforePersistedCallback { upto_offset: 161042 }
+AfterPersistedCallback { upto_offset: 161042 }
+AfterSync { upto_offset: 161042, succeeded: true }
+BeforeRequestCallback { upto_offset: 148337 }
+AfterRequestCallback { upto_offset: 148337 }
+BeforeRequestCallback { upto_offset: 152572 }
+AfterRequestCallback { upto_offset: 152572 }
+BeforeRequestCallback { upto_offset: 156807 }
+AfterRequestCallback { upto_offset: 156807 }
+BeforeRequestCallback { upto_offset: 161042 }
+AfterRequestCallback { upto_offset: 161042 }
+BeforeComplete { seq: 44 }
+AfterComplete { seq: 44 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(45) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(46) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(47) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(48) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 177982, files: 1 }
+BeforePersistedCallback { upto_offset: 177982 }
+AfterPersistedCallback { upto_offset: 177982 }
+AfterSync { upto_offset: 177982, succeeded: true }
+BeforeRequestCallback { upto_offset: 165277 }
+AfterRequestCallback { upto_offset: 165277 }
+BeforeRequestCallback { upto_offset: 169512 }
+AfterRequestCallback { upto_offset: 169512 }
+BeforeRequestCallback { upto_offset: 173747 }
+AfterRequestCallback { upto_offset: 173747 }
+BeforeRequestCallback { upto_offset: 177982 }
+AfterRequestCallback { upto_offset: 177982 }
+BeforeComplete { seq: 48 }
+AfterComplete { seq: 48 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(49) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(50) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(51) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(52) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 194922, files: 1 }
+BeforePersistedCallback { upto_offset: 194922 }
+AfterPersistedCallback { upto_offset: 194922 }
+AfterSync { upto_offset: 194922, succeeded: true }
+BeforeRequestCallback { upto_offset: 182217 }
+AfterRequestCallback { upto_offset: 182217 }
+BeforeRequestCallback { upto_offset: 186452 }
+AfterRequestCallback { upto_offset: 186452 }
+BeforeRequestCallback { upto_offset: 190687 }
+AfterRequestCallback { upto_offset: 190687 }
+BeforeRequestCallback { upto_offset: 194922 }
+AfterRequestCallback { upto_offset: 194922 }
+BeforeComplete { seq: 52 }
+AfterComplete { seq: 52 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(53) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(54) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(55) }
+BeforeWrite { items: 2, bytes: 8470 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 203392, files: 1 }
+BeforePersistedCallback { upto_offset: 203392 }
+AfterPersistedCallback { upto_offset: 203392 }
+AfterSync { upto_offset: 203392, succeeded: true }
+BeforeRequestCallback { upto_offset: 199157 }
+AfterRequestCallback { upto_offset: 199157 }
+BeforeNonWrite { kind: AppendFile }
+AfterNonWrite { kind: AppendFile, succeeded: true }
+BeforeComplete { seq: 55 }
+AfterComplete { seq: 55 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(56) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(57) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(58) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(59) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 8522 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 211914, files: 2 }
+BeforePersistedCallback { upto_offset: 211914 }
+AfterPersistedCallback { upto_offset: 211914 }
+AfterSync { upto_offset: 211914, succeeded: true }
+BeforeRequestCallback { upto_offset: 203444 }
+AfterRequestCallback { upto_offset: 203444 }
+BeforeRequestCallback { upto_offset: 207679 }
+AfterRequestCallback { upto_offset: 207679 }
+BeforeRequestCallback { upto_offset: 211914 }
+AfterRequestCallback { upto_offset: 211914 }
+BeforeComplete { seq: 59 }
+AfterComplete { seq: 59 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(60) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(61) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(62) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(63) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 228854, files: 1 }
+BeforePersistedCallback { upto_offset: 228854 }
+AfterPersistedCallback { upto_offset: 228854 }
+AfterSync { upto_offset: 228854, succeeded: true }
+BeforeRequestCallback { upto_offset: 216149 }
+AfterRequestCallback { upto_offset: 216149 }
+BeforeRequestCallback { upto_offset: 220384 }
+AfterRequestCallback { upto_offset: 220384 }
+BeforeRequestCallback { upto_offset: 224619 }
+AfterRequestCallback { upto_offset: 224619 }
+BeforeRequestCallback { upto_offset: 228854 }
+AfterRequestCallback { upto_offset: 228854 }
+BeforeComplete { seq: 63 }
+AfterComplete { seq: 63 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(64) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(65) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(66) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(67) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 245794, files: 1 }
+BeforePersistedCallback { upto_offset: 245794 }
+AfterPersistedCallback { upto_offset: 245794 }
+AfterSync { upto_offset: 245794, succeeded: true }
+BeforeRequestCallback { upto_offset: 233089 }
+AfterRequestCallback { upto_offset: 233089 }
+BeforeRequestCallback { upto_offset: 237324 }
+AfterRequestCallback { upto_offset: 237324 }
+BeforeRequestCallback { upto_offset: 241559 }
+AfterRequestCallback { upto_offset: 241559 }
+BeforeRequestCallback { upto_offset: 245794 }
+AfterRequestCallback { upto_offset: 245794 }
+BeforeComplete { seq: 67 }
+AfterComplete { seq: 67 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(68) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(69) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(70) }
+BeforeBatchReceive { items: 3 }
+AfterBatchReceive { seq: Some(71) }
+BeforeBatchReceive { items: 4 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 4, bytes: 16940 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 262734, files: 1 }
+BeforePersistedCallback { upto_offset: 262734 }
+AfterPersistedCallback { upto_offset: 262734 }
+AfterSync { upto_offset: 262734, succeeded: true }
+BeforeRequestCallback { upto_offset: 250029 }
+AfterRequestCallback { upto_offset: 250029 }
+BeforeRequestCallback { upto_offset: 254264 }
+AfterRequestCallback { upto_offset: 254264 }
+BeforeRequestCallback { upto_offset: 258499 }
+AfterRequestCallback { upto_offset: 258499 }
+BeforeRequestCallback { upto_offset: 262734 }
+AfterRequestCallback { upto_offset: 262734 }
+BeforeComplete { seq: 71 }
+AfterComplete { seq: 71 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(72) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(73) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: Some(74) }
+BeforeWrite { items: 2, bytes: 8470 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 271204, files: 1 }
+BeforePersistedCallback { upto_offset: 271204 }
+AfterPersistedCallback { upto_offset: 271204 }
+AfterSync { upto_offset: 271204, succeeded: true }
+BeforeRequestCallback { upto_offset: 266969 }
+AfterRequestCallback { upto_offset: 266969 }
+BeforeNonWrite { kind: AppendFile }
+AfterNonWrite { kind: AppendFile, succeeded: true }
+BeforeComplete { seq: 74 }
+AfterComplete { seq: 74 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(75) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: Some(76) }
+BeforeBatchReceive { items: 2 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 2, bytes: 52 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 271256, files: 2 }
+BeforePersistedCallback { upto_offset: 271256 }
+AfterPersistedCallback { upto_offset: 271256 }
+AfterSync { upto_offset: 271256, succeeded: true }
+BeforeRequestCallback { upto_offset: 271256 }
+AfterRequestCallback { upto_offset: 271256 }
+BeforeComplete { seq: 76 }
+AfterComplete { seq: 76 }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(77) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 1, bytes: 0 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 271256, files: 1 }
+BeforePersistedCallback { upto_offset: 271256 }
+AfterPersistedCallback { upto_offset: 271256 }
+AfterSync { upto_offset: 271256, succeeded: true }
+BeforeComplete { seq: 77 }
+AfterComplete { seq: 77 }
+BeforeFirstReceive
+AfterFirstReceive { seq: None }
+WorkerStopped { succeeded: true }
+BeforeFirstReceive
+AfterFirstReceive { seq: Some(1) }
+BeforeBatchReceive { items: 1 }
+AfterBatchReceive { seq: None }
+BeforeWrite { items: 1, bytes: 0 }
+AfterWrite { succeeded: true }
+BeforeSync { upto_offset: 271256, files: 1 }
+BeforePersistedCallback { upto_offset: 271256 }
+AfterPersistedCallback { upto_offset: 271256 }
+AfterSync { upto_offset: 271256, succeeded: true }
+BeforeComplete { seq: 1 }
+AfterComplete { seq: 1 }
+BeforeFirstReceive
+AfterFirstReceive { seq: None }
+WorkerStopped { succeeded: true }

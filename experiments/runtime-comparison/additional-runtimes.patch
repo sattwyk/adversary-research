@@ -1,0 +1,17 @@
+diff --git a/crates/server/raft-log/Cargo.toml b/crates/server/raft-log/Cargo.toml
+--- a/crates/server/raft-log/Cargo.toml
++++ b/crates/server/raft-log/Cargo.toml
+@@ -10,8 +10,13 @@
+ 
+ [features]
+ adversary-turmoil = ["dep:turmoil"]
++adversary-commonware = ["dep:commonware-runtime"]
++adversary-commonware-external = ["adversary-commonware", "commonware-runtime/external"]
++adversary-madsim = ["dep:madsim"]
+ 
+ [dependencies]
++commonware-runtime = { version = "=2026.9.0", optional = true }
++madsim = { version = "=0.2.34", optional = true }
+ turmoil = { version = "=0.7.2", optional = true }
+ anyerror = { workspace = true }
+ databend-meta-types = { workspace = true }

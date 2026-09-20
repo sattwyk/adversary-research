@@ -1,0 +1,44 @@
+    Updating crates.io index
+    Blocking waiting for file lock on package cache
+     Locking 3 packages to latest compatible versions
+      Adding chunked-wal v0.2.3 (/tmp/adversary-runtime-comparison/chunked-wal)
+      Adding rand_distr v0.5.1
+      Adding turmoil v0.7.2
+ Downloading crates ...
+  Downloaded scoped-tls v1.0.1
+  Downloaded rand_distr v0.5.1
+  Downloaded turmoil v0.7.2
+    Blocking waiting for file lock on package cache
+   Compiling tokio v1.53.1
+   Compiling zerocopy v0.8.57
+   Compiling tokio-util v0.7.19
+   Compiling h2 v0.4.19
+   Compiling tower v0.5.3
+   Compiling getrandom v0.3.4
+   Compiling axum v0.8.9
+   Compiling hyper v1.11.1
+   Compiling rust_decimal v1.43.0
+   Compiling rand_core v0.9.5
+   Compiling hyper-util v0.1.20
+   Compiling ppv-lite86 v0.2.21
+   Compiling tokio-rustls v0.26.5
+   Compiling tokio-stream v0.1.19
+   Compiling byte-unit v5.2.6
+   Compiling hyper-timeout v0.5.2
+   Compiling state-machine-api v0.4.0 (https://github.com/databendlabs/state-machine-api?tag=v0.4.0#7abd898d)
+   Compiling tonic v0.14.6
+   Compiling openraft-rt-tokio v0.10.0-alpha.34
+   Compiling rand_chacha v0.9.0
+   Compiling openraft v0.10.0-alpha.29
+   Compiling tonic-prost v0.14.6
+   Compiling databend-meta-proto v260629.7.0 (/tmp/adversary-runtime-comparison/databend-meta/crates/common/proto)
+   Compiling rand v0.9.5
+   Compiling databend-meta-base v260629.7.0 (/tmp/adversary-runtime-comparison/databend-meta/crates/server/base)
+   Compiling chunked-wal v0.2.3 (/tmp/adversary-runtime-comparison/chunked-wal)
+   Compiling rand_distr v0.5.1
+   Compiling scoped-tls v1.0.1
+   Compiling turmoil v0.7.2
+   Compiling raft-log v0.4.6
+   Compiling databend-meta-types v260629.7.0 (/tmp/adversary-runtime-comparison/databend-meta/crates/server/types)
+   Compiling databend-meta-raft-log v260629.7.0 (/tmp/adversary-runtime-comparison/databend-meta/crates/server/raft-log)
+    Finished `dev` profile [unoptimized] target(s) in 1m 06s

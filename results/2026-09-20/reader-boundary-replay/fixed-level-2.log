@@ -1,0 +1,72 @@
+    Finished `test` profile [unoptimized] target(s) in 0.07s
+     Running unittests src/lib.rs (/tmp/adversary-reader-target/debug/deps/raft_log-24de329f183bb65b)
+
+running 1 test
+READER {"execution":0,"level":2,"valid":[true, true]}
+READER {"execution":1,"level":2,"valid":[true, true]}
+READER {"execution":2,"level":2,"valid":[true, true]}
+READER {"execution":3,"level":2,"valid":[true, true]}
+READER {"execution":4,"level":2,"valid":[true, true]}
+READER {"execution":5,"level":2,"valid":[true, true]}
+READER {"execution":6,"level":2,"valid":[true, true]}
+READER {"execution":7,"level":2,"valid":[true, true]}
+READER {"execution":8,"level":2,"valid":[true, true]}
+READER {"execution":9,"level":2,"valid":[true, true]}
+READER {"execution":10,"level":2,"valid":[true, true]}
+READER {"execution":11,"level":2,"valid":[true, true]}
+READER {"execution":12,"level":2,"valid":[true, true]}
+READER {"execution":13,"level":2,"valid":[true, true]}
+READER {"execution":14,"level":2,"valid":[true, true]}
+READER {"execution":15,"level":2,"valid":[true, true]}
+READER {"execution":16,"level":2,"valid":[true, true]}
+READER {"execution":17,"level":2,"valid":[true, true]}
+READER {"execution":18,"level":2,"valid":[true, true]}
+READER {"execution":19,"level":2,"valid":[true, true]}
+READER {"execution":20,"level":2,"valid":[true, true]}
+READER {"execution":21,"level":2,"valid":[true, true]}
+READER {"execution":22,"level":2,"valid":[true, true]}
+READER {"execution":23,"level":2,"valid":[true, true]}
+READER {"execution":24,"level":2,"valid":[true, true]}
+READER {"execution":25,"level":2,"valid":[true, true]}
+READER {"execution":26,"level":2,"valid":[true, true]}
+READER {"execution":27,"level":2,"valid":[true, true]}
+READER {"execution":28,"level":2,"valid":[true, true]}
+READER {"execution":29,"level":2,"valid":[true, true]}
+READER {"execution":30,"level":2,"valid":[true, true]}
+READER {"execution":31,"level":2,"valid":[true, true]}
+READER {"execution":32,"level":2,"valid":[true, true]}
+READER {"execution":33,"level":2,"valid":[true, true]}
+READER {"execution":34,"level":2,"valid":[true, true]}
+READER {"execution":35,"level":2,"valid":[true, true]}
+READER {"execution":36,"level":2,"valid":[true, true]}
+READER {"execution":37,"level":2,"valid":[true, true]}
+READER {"execution":38,"level":2,"valid":[true, true]}
+READER {"execution":39,"level":2,"valid":[true, true]}
+READER {"execution":40,"level":2,"valid":[true, true]}
+READER {"execution":41,"level":2,"valid":[true, true]}
+READER {"execution":42,"level":2,"valid":[true, true]}
+READER {"execution":43,"level":2,"valid":[true, true]}
+READER {"execution":44,"level":2,"valid":[true, true]}
+READER {"execution":45,"level":2,"valid":[true, true]}
+READER {"execution":46,"level":2,"valid":[true, true]}
+READER {"execution":47,"level":2,"valid":[true, true]}
+READER {"execution":48,"level":2,"valid":[true, true]}
+READER {"execution":49,"level":2,"valid":[true, true]}
+READER {"execution":50,"level":2,"valid":[true, true]}
+READER {"execution":51,"level":2,"valid":[true, true]}
+READER {"execution":52,"level":2,"valid":[true, true]}
+READER {"execution":53,"level":2,"valid":[true, true]}
+READER {"execution":54,"level":2,"valid":[true, true]}
+READER {"execution":55,"level":2,"valid":[true, true]}
+READER {"execution":56,"level":2,"valid":[true, true]}
+READER {"execution":57,"level":2,"valid":[true, true]}
+READER {"execution":58,"level":2,"valid":[true, true]}
+READER {"execution":59,"level":2,"valid":[true, true]}
+READER {"execution":60,"level":2,"valid":[true, true]}
+READER {"execution":61,"level":2,"valid":[true, true]}
+READER {"execution":62,"level":2,"valid":[true, true]}
+READER_SUMMARY {"level":2,"executions":63,"found":false}
+test tests::reader_boundary::adversary_reader_boundary ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 50 filtered out; finished in 0.16s
+

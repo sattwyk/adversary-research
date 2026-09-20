@@ -1,0 +1,82 @@
+{
+  "native": {
+    "trials": 10,
+    "full_worker_trace_sha256": "0a7714f6622072e2568370673f7ee584b628c02d483d1fd7e9e7626976d0d7f3",
+    "topology_usage": {
+      "wall_seconds": 1.7243665129644796,
+      "user_cpu_seconds": 1.484796,
+      "system_cpu_seconds": 0.048154999999999996,
+      "peak_rss_kib": 34896,
+      "exit_code": 0,
+      "external_timeout": false
+    },
+    "sync_failure": {
+      "first_error": "StorageFull",
+      "idle_error": "StorageFull",
+      "later_error": "Other",
+      "sync_calls": 1,
+      "events": 17
+    },
+    "sync_failure_trace_sha256": "1e09ddaa2608518ef8d33daadf5158bc4a287c5568a65ed523eabe8ee387bc09"
+  },
+  "turmoil": {
+    "trials": 10,
+    "full_worker_trace_sha256": "0a7714f6622072e2568370673f7ee584b628c02d483d1fd7e9e7626976d0d7f3",
+    "topology_usage": {
+      "wall_seconds": 1.6229352949885651,
+      "user_cpu_seconds": 1.525587,
+      "system_cpu_seconds": 0.064575,
+      "peak_rss_kib": 35688,
+      "exit_code": 0,
+      "external_timeout": false
+    },
+    "sync_failure": {
+      "first_error": "StorageFull",
+      "idle_error": "StorageFull",
+      "later_error": "Other",
+      "sync_calls": 1,
+      "events": 17
+    },
+    "sync_failure_trace_sha256": "1e09ddaa2608518ef8d33daadf5158bc4a287c5568a65ed523eabe8ee387bc09"
+  },
+  "commonware-external": {
+    "trials": 10,
+    "full_worker_trace_sha256": "0a7714f6622072e2568370673f7ee584b628c02d483d1fd7e9e7626976d0d7f3",
+    "topology_usage": {
+      "wall_seconds": 1.674431369989179,
+      "user_cpu_seconds": 1.5532219999999999,
+      "system_cpu_seconds": 0.044377,
+      "peak_rss_kib": 34816,
+      "exit_code": 0,
+      "external_timeout": false
+    },
+    "sync_failure": {
+      "first_error": "StorageFull",
+      "idle_error": "StorageFull",
+      "later_error": "Other",
+      "sync_calls": 1,
+      "events": 17
+    },
+    "sync_failure_trace_sha256": "1e09ddaa2608518ef8d33daadf5158bc4a287c5568a65ed523eabe8ee387bc09"
+  },
+  "madsim": {
+    "trials": 10,
+    "full_worker_trace_sha256": "0a7714f6622072e2568370673f7ee584b628c02d483d1fd7e9e7626976d0d7f3",
+    "topology_usage": {
+      "wall_seconds": 1.6278812399832532,
+      "user_cpu_seconds": 1.484164,
+      "system_cpu_seconds": 0.052716,
+      "peak_rss_kib": 34272,
+      "exit_code": 0,
+      "external_timeout": false
+    },
+    "sync_failure": {
+      "first_error": "StorageFull",
+      "idle_error": "StorageFull",
+      "later_error": "Other",
+      "sync_calls": 1,
+      "events": 17
+    },
+    "sync_failure_trace_sha256": "1e09ddaa2608518ef8d33daadf5158bc4a287c5568a65ed523eabe8ee387bc09"
+  }
+}

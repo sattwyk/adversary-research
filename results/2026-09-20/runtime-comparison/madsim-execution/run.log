@@ -1,0 +1,10 @@
+attempt to spawn a system thread in simulation.
+note: try to use tokio tasks instead.
+note: if you really need to spawn a system thread, set the environment variable `MADSIM_ALLOW_SYSTEM_THREAD` to `1`.
+
+thread 'main' (56292) panicked at library/std/src/sys/thread/unix.rs:50:9:
+assertion `left == right` failed
+  left: -1
+ right: 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+context: node=0 "madsim-main", task=0 (spawned at /home/satty/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/madsim-0.2.34/src/sim/runtime/mod.rs:129:19)

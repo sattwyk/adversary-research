@@ -6,7 +6,7 @@ An adversarial investigation of deterministic testing **above the OS**, preservi
 
 ## Start here
 
-**Latest:** [Execution-topology results, 20 September](docs/research/topology-experiment-results.md). Ten controlled native-worker replays passed; vote sync-error propagation and four historical regression scenarios were exercised. Full cluster, competitor, exploration and power-loss validation remain unperformed. The report answers all 16 requested questions with those limitations explicit.
+**Latest:** [Matched runtime evidence, 20 September](docs/research/runtime-comparison-progress.md). Native, Turmoil, Commonware external mode and MadSim with native threads enabled produced identical worker traces across 40 recovery trials and matched vote-sync failure results. Shuttle reproduced and replayed the historical reader race. A negative test also exposed a deadlock introduced by our checkpoint controller. Full cluster, search-strategy comparison, overhead and power-loss validation remain unfinished. The [earlier topology report](docs/research/topology-experiment-results.md) records the preceding experiment.
 
 1. [Evidence and project status](docs/STATUS.md): what ran, what failed, and what remains untested.
 2. [Full continuation review](docs/research/continuation-review.md): the main architecture analysis, implementation references, alternatives, and falsification protocols.

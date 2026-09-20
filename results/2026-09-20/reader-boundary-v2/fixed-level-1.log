@@ -1,0 +1,28 @@
+    Finished `test` profile [unoptimized] target(s) in 0.05s
+     Running unittests src/lib.rs (/tmp/adversary-reader-target/debug/deps/raft_log-24de329f183bb65b)
+
+running 1 test
+READER {"execution":0,"level":1,"valid":[true, true]}
+READER {"execution":1,"level":1,"valid":[true, true]}
+READER {"execution":2,"level":1,"valid":[true, true]}
+READER {"execution":3,"level":1,"valid":[true, true]}
+READER {"execution":4,"level":1,"valid":[true, true]}
+READER {"execution":5,"level":1,"valid":[true, true]}
+READER {"execution":6,"level":1,"valid":[true, true]}
+READER {"execution":7,"level":1,"valid":[true, true]}
+READER {"execution":8,"level":1,"valid":[true, true]}
+READER {"execution":9,"level":1,"valid":[true, true]}
+READER {"execution":10,"level":1,"valid":[true, true]}
+READER {"execution":11,"level":1,"valid":[true, true]}
+READER {"execution":12,"level":1,"valid":[true, true]}
+READER {"execution":13,"level":1,"valid":[true, true]}
+READER {"execution":14,"level":1,"valid":[true, true]}
+READER {"execution":15,"level":1,"valid":[true, true]}
+READER {"execution":16,"level":1,"valid":[true, true]}
+READER {"execution":17,"level":1,"valid":[true, true]}
+READER {"execution":18,"level":1,"valid":[true, true]}
+READER_SUMMARY {"level":1,"executions":19,"found":false}
+test tests::reader_boundary::adversary_reader_boundary ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 50 filtered out; finished in 0.03s
+
